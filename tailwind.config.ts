@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Cosmic Consciousness Palette
+        cosmic: {
+          saffron: "hsl(var(--cosmic-saffron))",
+          white: "hsl(var(--cosmic-white))",
+          green: "hsl(var(--cosmic-green))",
+        },
+        infinity: {
+          gold: "hsl(var(--infinity-gold))",
+        },
+        consciousness: {
+          purple: "hsl(var(--consciousness-purple))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +74,10 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        'cosmic': ['Orbitron', 'monospace'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
@@ -80,10 +96,50 @@ export default {
             height: "0",
           },
         },
+        "infinity-pulse": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+            opacity: "0.8",
+          },
+        },
+        "cosmic-glow": {
+          "0%": {
+            boxShadow: "0 0 20px hsl(45 100% 65% / 0.3)",
+          },
+          "100%": {
+            boxShadow: "0 0 40px hsl(45 100% 65% / 0.6), 0 0 80px hsl(260 60% 65% / 0.3)",
+          },
+        },
+        "consciousness-flow": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "infinity-pulse": "infinity-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "cosmic-glow": "cosmic-glow 3s ease-in-out infinite alternate",
+        "consciousness-flow": "consciousness-flow 8s linear infinite",
+        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
       },
     },
   },
