@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img src={clyfoLogo} alt="CLYFO" className="h-10 w-auto rounded-lg shadow-cosmic" />
             <div className="font-cosmic text-xl font-bold">
-              CLYFO<sup className="text-sm text-infinity-gold">369</sup>
+              CLYFO<sup className="text-sm text-infinity-gold">369</sup><span className="text-infinity-gold">(♾)</span>
             </div>
           </Link>
 
