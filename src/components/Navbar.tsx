@@ -1,12 +1,21 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, Settings, User } from "lucide-react";
 import clyfoLogo from "@/assets/clyfo-logo.jpg";
+
+interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  role: "aspirant" | "transformer";
+}
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -17,6 +26,31 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch {
+        localStorage.removeItem("user");
+      }
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/login");
+  };
+
+  const handleDashboard = () => {
+    if (user?.role === "aspirant") {
+      navigate("/aspirant-dashboard");
+    } else if (user?.role === "transformer") {
+      navigate("/transformer-dashboard");
+    }
+  };
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border">
@@ -49,16 +83,57 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/login">
-              <Button variant="outline" className="animate-cosmic-glow">
-                Login
-              </Button>
-            </Link>
-            <Button className="gradient-cosmic text-background font-medium">
-              Get Started
-            </Button>
+          {/* Auth Section */}
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <>
+                <div className="flex items-center gap-2 px-3 py-1 bg-card/50 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-cosmic-saffron/20 flex items-center justify-center">
+                    <span className="text-xs font-bold">{user.firstName.charAt(0)}</span>
+                  </div>
+                  <span className="text-sm font-medium hidden sm:block">
+                    {user.firstName}
+                  </span>
+                </div>
+                
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleDashboard}
+                  className="gap-2"
+                >
+                  <User className="w-4 h-4" />
+                  Dashboard
+                </Button>
+
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleLogout}
+                  className="gap-2 text-red-400 hover:text-red-400"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </Button>
+                <Button
+                  size="sm"
+                  className="gradient-cosmic text-background"
+                  onClick={() => navigate("/login")}
+                >
+                  Sign Up
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -105,6 +180,19 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+  );
+};
+
+// Helper component for nav links
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate(href)}
+      className="text-sm font-medium hover:text-primary transition-colors"
+    >
+      {children}
+    </button>
   );
 };
 
