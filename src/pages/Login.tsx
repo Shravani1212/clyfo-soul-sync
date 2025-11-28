@@ -1,17 +1,115 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Eye, EyeOff, Phone, Mail, User, Lock } from "lucide-react";
+import { Eye, EyeOff, Phone, Mail, User, Lock, AlertCircle, CheckCircle } from "lucide-react";
 import clyfoLogo from "@/assets/clyfo-logo.jpg";
 import cosmicBg from "@/assets/cosmic-bg.jpg";
 
+interface MockUser {
+  email: string;
+  phone: string;
+  password: string;
+  role: "aspirant" | "transformer";
+  id: string;
+}
+
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [loginType, setLoginType] = useState("email");
+  const [loginType, setLoginType] = useState<"email" | "phone">("email");
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ type: "error" | "success"; text: string } | null>(null);
+
+  const mockUsers: MockUser[] = [
+    { 
+      email: "aspirant@clyfo.com", 
+      phone: "+919876543210", 
+      password: "password123", 
+      role: "aspirant", 
+      id: "CLY369ASP" 
+    },
+    { 
+      email: "transformer@clyfo.com", 
+      phone: "+919876543211", 
+      password: "password123", 
+      role: "transformer", 
+      id: "CLY369TRN" 
+    }
+  ];
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessage(null);
+
+    const trimmedIdentifier = identifier.trim();
+    const trimmedPassword = password.trim();
+
+    if (!trimmedIdentifier || !trimmedPassword) {
+      setMessage({ type: "error", text: "Please enter credentials." });
+      return;
+    }
+
+    setLoading(true);
+
+    // Simulate API/auth delay
+    setTimeout(() => {
+      console.log("🔐 Login Attempt:", { loginType, identifier: trimmedIdentifier, password: trimmedPassword });
+
+      let user: MockUser | undefined;
+
+      if (loginType === "email") {
+        user = mockUsers.find(
+          u => u.email.toLowerCase() === trimmedIdentifier.toLowerCase() && u.password === trimmedPassword
+        );
+      } else {
+        user = mockUsers.find(
+          u => u.phone === trimmedIdentifier && u.password === trimmedPassword
+        );
+      }
+
+      if (!user) {
+        console.log("❌ No matching user found");
+        setMessage({ type: "error", text: "Invalid credentials. Use demo credentials shown below." });
+        setLoading(false);
+        return;
+      }
+
+      console.log("✅ User authenticated:", user.id, user.role);
+
+      // Save session to localStorage
+      const session = {
+        id: user.id,
+        email: user.email,
+        phone: user.phone,
+        role: user.role,
+        firstName: user.role === "aspirant" ? "Aspirant" : "Transformer",
+        lastName: user.role === "aspirant" ? "User" : "Coach",
+        token: `demo-token-${Date.now()}`,
+        loginTime: new Date().toISOString()
+      };
+
+      localStorage.setItem("user", JSON.stringify(session));
+      console.log("📝 Session saved:", session);
+
+      setMessage({ type: "success", text: "✓ Login successful! Redirecting to dashboard..." });
+
+      // Redirect based on role
+      setTimeout(() => {
+        if (user.role === "aspirant") {
+          navigate("/aspirant-dashboard", { replace: true });
+        } else {
+          navigate("/transformer-dashboard", { replace: true });
+        }
+      }, 1000);
+    }, 700);
+  };
 
   return (
     <div 
@@ -51,9 +149,10 @@ const Login = () => {
               </TabsList>
 
               <TabsContent value="login" className="space-y-6">
-                <div className="space-y-4">
+                <form onSubmit={handleLogin} className="space-y-4">
                   <div className="flex gap-2">
                     <Button 
+                      type="button"
                       variant={loginType === "email" ? "default" : "outline"}
                       size="sm"
                       onClick={() => setLoginType("email")}
@@ -63,6 +162,7 @@ const Login = () => {
                       Email
                     </Button>
                     <Button 
+                      type="button"
                       variant={loginType === "phone" ? "default" : "outline"}
                       size="sm"
                       onClick={() => setLoginType("phone")}
@@ -81,8 +181,11 @@ const Login = () => {
                       <Input 
                         id="identifier"
                         type={loginType === "email" ? "email" : "tel"}
-                        placeholder={loginType === "email" ? "Enter your email" : "Enter your phone"}
+                        placeholder={loginType === "email" ? "aspirant@clyfo.com" : "+919876543210"}
                         className="pl-10"
+                        value={identifier}
+                        onChange={(e) => setIdentifier(e.target.value)}
+                        disabled={loading}
                       />
                       {loginType === "email" ? (
                         <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -100,6 +203,9 @@ const Login = () => {
                         type={showPassword ? "text" : "password"}
                         placeholder="Enter your password"
                         className="pl-10 pr-10"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        disabled={loading}
                       />
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Button
@@ -118,16 +224,33 @@ const Login = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full gradient-cosmic text-background font-medium animate-cosmic-glow">
-                    Enter CLYFO Portal
+                  {message && (
+                    <div className={`p-3 rounded-md ${message.type === "error" ? "bg-red-500/10 border border-red-400/20" : "bg-green-500/10 border border-green-400/20"}`}>
+                      <div className="flex items-start gap-2 text-sm">
+                        {message.type === "error" ? (
+                          <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                        ) : (
+                          <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                        )}
+                        <div>{message.text}</div>
+                      </div>
+                    </div>
+                  )}
+
+                  <Button 
+                    type="submit" 
+                    disabled={loading} 
+                    className="w-full gradient-cosmic text-background font-medium animate-cosmic-glow"
+                  >
+                    {loading ? "Authenticating..." : "Enter CLYFO Portal"}
                   </Button>
 
                   <div className="text-center">
-                    <Button variant="link" className="text-sm text-primary">
+                    <Button type="button" variant="link" className="text-sm text-primary">
                       Forgot Password?
                     </Button>
                   </div>
-                </div>
+                </form>
               </TabsContent>
 
               <TabsContent value="register" className="space-y-6">
@@ -225,6 +348,17 @@ const Login = () => {
                 </div>
               </TabsContent>
             </Tabs>
+
+            {/* Demo credentials UI shown on the login page */}
+            <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+              <p className="text-xs text-blue-200">
+                <strong>Demo Credentials:</strong><br/>
+                📧 Email: aspirant@clyfo.com | Pass: password123<br/>
+                📧 Email: transformer@clyfo.com | Pass: password123<br/>
+                📱 Phone: +919876543210 | Pass: password123<br/>
+                📱 Phone: +919876543211 | Pass: password123
+              </p>
+            </div>
 
             <div className="mt-8 pt-6 border-t border-border text-center">
               <p className="text-xs text-muted-foreground">

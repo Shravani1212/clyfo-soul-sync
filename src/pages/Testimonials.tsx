@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +8,7 @@ import { Star, Quote, Play, ArrowLeft, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Testimonials = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const testimonials = [
@@ -248,10 +250,19 @@ const Testimonials = () => {
           <p className="text-xl mb-12 text-muted-foreground">
             Join thousands who've transformed their lives through conscious evolution
           </p>
-          <Button size="lg" className="gradient-cosmic text-background shadow-cosmic mr-4">
+          <Button 
+            size="lg" 
+            className="gradient-cosmic text-background shadow-cosmic mr-4"
+            onClick={() => navigate("/login")}
+          >
             Start Your Journey
           </Button>
-          <Button size="lg" variant="outline" className="animate-cosmic-glow">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="animate-cosmic-glow"
+            onClick={() => navigate("/contact")}
+          >
             Share Your Story
           </Button>
         </div>

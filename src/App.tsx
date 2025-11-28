@@ -1,19 +1,26 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster"
+
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import JyaniBot from "./components/JyaniBot";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Programmes from "./pages/Programmes";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import Login from "./pages/LoginAuthentication";
-import AspirantDashboard from "./pages/AspirantDashboard";
-import TransformerDashboard from "./pages/TransformerDashboard";
+import Navbar from "@/components/Navbar";
+import JyaniBot from "@/components/JyaniBot";
+
+// Page imports
+import Index from "@/pages/Index";
+import About from "@/pages/About";
+import Programmes from "@/pages/Programmes";
+import Testimonials from "@/pages/Testimonials";
+import Contact from "@/pages/Contact";
+import Login from "@/pages/Login";
+import AspirantDashboard from "@/pages/AspirantDashboard";
+import TransformerDashboard from "@/pages/TransformerDashboard";
+import Referral from "@/pages/Referral";
+import Challenges from "@/pages/Challenges";
+import Leaderboard from "@/pages/Leaderboard";
+import Tools from "@/pages/Tools";
+import Support from "@/pages/Support";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -49,11 +56,11 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      
       <BrowserRouter>
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-background">
           <Navbar />
-          <main className="pt-16">
+          <main className="min-h-screen">
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Index />} />
@@ -83,12 +90,44 @@ const App = () => (
                 } 
               />
 
+              {/* Authenticated Routes */}
+              <Route 
+                path="/referral" 
+                element={
+                  <ProtectedRoute element={<Referral />} />
+                } 
+              />
+              <Route 
+                path="/challenges" 
+                element={
+                  <ProtectedRoute element={<Challenges />} />
+                } 
+              />
+              <Route 
+                path="/leaderboard" 
+                element={
+                  <ProtectedRoute element={<Leaderboard />} />
+                } 
+              />
+              <Route 
+                path="/tools" 
+                element={
+                  <ProtectedRoute element={<Tools />} />
+                } 
+              />
+              <Route 
+                path="/support" 
+                element={
+                  <ProtectedRoute element={<Support />} />
+                } 
+              />
+
               {/* Fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           
-          {/* AI Chatbot - Available globally (hidden on dashboard pages) */}
+          {/* AI Chatbot - Global Component */}
           <JyaniBot />
         </div>
       </BrowserRouter>
