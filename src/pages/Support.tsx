@@ -16,7 +16,9 @@ import {
   HelpCircle,
   Edit2,
   Save,
-  X
+  X,
+  Flag,
+  Sparkles // Added Sparkles for extra animation
 } from "lucide-react";
 import { toast } from "sonner";
 import DashboardLayout from "@/components/DashboardLayout";
@@ -32,7 +34,7 @@ interface BankDetails {
 const Support = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
-  const [theme, setTheme] = useState<"light" | "dark" | "auto">("dark");
+  const [theme, setTheme] = useState<"light" | "dark" | "auto" | "tricolor">("dark");
   const [editingBank, setEditingBank] = useState(false);
   const [bankDetails, setBankDetails] = useState<BankDetails>({
     accountHolder: "Kasthuri Shravani",
@@ -64,26 +66,45 @@ const Support = () => {
     }
     try {
       setUser(JSON.parse(storedUser));
+      
       // Load saved theme
-      const savedTheme = localStorage.getItem("theme") || "dark";
-      setTheme(savedTheme as "light" | "dark" | "auto");
+      const savedTheme = localStorage.getItem("theme") as "light" | "dark" | "auto" | "tricolor" || "dark";
+      setTheme(savedTheme);
+      
+      // Apply class on load
+      const root = document.documentElement;
+      root.classList.remove("dark", "tricolor");
+      
+      if (savedTheme === "dark") {
+        root.classList.add("dark");
+      } else if (savedTheme === "tricolor") {
+        root.classList.add("tricolor");
+      } else if (savedTheme === "auto") {
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (systemTheme === "dark") root.classList.add("dark");
+      }
     } catch {
       navigate("/login");
     }
   }, [navigate]);
 
-  const handleThemeChange = (newTheme: "light" | "dark" | "auto") => {
+  const handleThemeChange = (newTheme: "light" | "dark" | "auto" | "tricolor") => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     
-    // Apply theme
+    const root = document.documentElement;
+    root.classList.remove("dark", "tricolor");
+    
     if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (newTheme === "light") {
-      document.documentElement.classList.remove("dark");
+      root.classList.add("dark");
+    } else if (newTheme === "tricolor") {
+      root.classList.add("tricolor");
+    } else if (newTheme === "auto") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      if (systemTheme === "dark") root.classList.add("dark");
     }
     
-    toast.success(`Theme changed to ${newTheme}`);
+    toast.success(`Theme changed to ${newTheme.charAt(0).toUpperCase() + newTheme.slice(1)}`);
   };
 
   const handleBankInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -147,9 +168,9 @@ const Support = () => {
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/5 to-background pt-20">
         <div className="max-w-6xl mx-auto px-4 py-12">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl font-cosmic font-bold mb-4 flex items-center justify-center gap-3">
-              <Settings className="w-10 h-10 text-cosmic-saffron" />
+              <Settings className="w-10 h-10 text-cosmic-saffron animate-spin-slow" />
               Settings & Support
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -178,7 +199,7 @@ const Support = () => {
             </TabsList>
 
             {/* Theme Tab */}
-            <TabsContent value="theme">
+            <TabsContent value="theme" className="animate-fade-in-up">
               <Card className="border-primary/20 bg-card/50 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -191,17 +212,17 @@ const Support = () => {
                     Choose your preferred theme for the CLYFO platform.
                   </p>
 
-                  <div className="grid md:grid-cols-3 gap-4">
+                  <div className="grid md:grid-cols-4 gap-4">
                     {/* Light Theme */}
                     <div
                       onClick={() => handleThemeChange("light")}
-                      className={`p-6 rounded-lg border-2 cursor-pointer transition-all ${
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
                         theme === "light"
-                          ? "border-cosmic-saffron bg-cosmic-saffron/10"
-                          : "border-border hover:border-primary/50"
+                          ? "border-cosmic-saffron bg-cosmic-saffron/10 shadow-lg"
+                          : "border-border hover:border-primary/50 hover:shadow-md"
                       }`}
                     >
-                      <Sun className="w-8 h-8 mb-3 text-yellow-500" />
+                      <Sun className="w-8 h-8 mb-3 text-yellow-500 group-hover:rotate-12 transition-transform duration-300" />
                       <h3 className="font-semibold mb-2">Light Mode</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Bright and clean interface
@@ -214,13 +235,13 @@ const Support = () => {
                     {/* Dark Theme */}
                     <div
                       onClick={() => handleThemeChange("dark")}
-                      className={`p-6 rounded-lg border-2 cursor-pointer transition-all ${
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
                         theme === "dark"
-                          ? "border-cosmic-saffron bg-cosmic-saffron/10"
-                          : "border-border hover:border-primary/50"
+                          ? "border-cosmic-saffron bg-cosmic-saffron/10 shadow-lg"
+                          : "border-border hover:border-primary/50 hover:shadow-md"
                       }`}
                     >
-                      <Moon className="w-8 h-8 mb-3 text-purple-500" />
+                      <Moon className="w-8 h-8 mb-3 text-purple-500 group-hover:-rotate-12 transition-transform duration-300" />
                       <h3 className="font-semibold mb-2">Dark Mode</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Easy on the eyes, perfect for night
@@ -233,13 +254,13 @@ const Support = () => {
                     {/* Auto Theme */}
                     <div
                       onClick={() => handleThemeChange("auto")}
-                      className={`p-6 rounded-lg border-2 cursor-pointer transition-all ${
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
                         theme === "auto"
-                          ? "border-cosmic-saffron bg-cosmic-saffron/10"
-                          : "border-border hover:border-primary/50"
+                          ? "border-cosmic-saffron bg-cosmic-saffron/10 shadow-lg"
+                          : "border-border hover:border-primary/50 hover:shadow-md"
                       }`}
                     >
-                      <Palette className="w-8 h-8 mb-3 text-blue-500" />
+                      <Palette className="w-8 h-8 mb-3 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
                       <h3 className="font-semibold mb-2">Auto</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Follow system settings
@@ -248,6 +269,31 @@ const Support = () => {
                         <Badge className="gradient-cosmic text-background">Active</Badge>
                       )}
                     </div>
+
+                    {/* Tricolor Theme - Enhanced with Animation */}
+                    <div
+                      onClick={() => handleThemeChange("tricolor")}
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-500 hover:scale-105 ${
+                        theme === "tricolor"
+                          ? "border-orange-500 shadow-xl shadow-orange-100/50 ring-2 ring-offset-2 ring-orange-200 bg-gradient-to-br from-orange-50 via-white to-green-50 scale-105"
+                          : "border-border hover:border-orange-400 hover:shadow-lg hover:shadow-orange-50 bg-white"
+                      }`}
+                    >
+                      <div className="flex justify-between items-start">
+                        <Flag className={`w-8 h-8 mb-3 text-orange-600 transition-transform duration-500 group-hover:rotate-12 ${theme === 'tricolor' ? 'animate-pulse' : ''}`} />
+                        {theme === "tricolor" && (
+                          <Sparkles className="w-5 h-5 text-green-600 animate-pulse" />
+                        )}
+                      </div>
+                      <h3 className="font-semibold mb-2 text-slate-900">Tricolor</h3>
+                      <p className="text-sm text-slate-600 mb-4">
+                        Indian Flag Inspired
+                      </p>
+                      {theme === "tricolor" && (
+                        <Badge className="bg-gradient-to-r from-orange-500 via-white to-green-600 text-black border border-slate-200 shadow-md animate-pulse">Active</Badge>
+                      )}
+                    </div>
+
                   </div>
                 </CardContent>
               </Card>
