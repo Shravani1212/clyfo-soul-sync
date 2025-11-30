@@ -8,8 +8,8 @@
 @layer base {
   :root {
     /* Cosmic Consciousness Colors */
-    --background: 220 25% 5%;
-    --foreground: 45 100% 95%;
+   --background: 0 0% 100% / 0.85; /* Light mode transparency */
+    --foreground: 222.2 84% 4.9%;
 
     /* Sacred Tri-color Cosmic Palette */
     --cosmic-saffron: 25 100% 60%;
@@ -58,6 +58,7 @@
     --pulse-sacred: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     --radius: 1rem;
+    
   }
 }
 
@@ -193,8 +194,8 @@
 
   .dark {
     /* Cosmic Consciousness Colors (Your Original Dark Theme) */
-    --background: 220 25% 5%;
-    --foreground: 45 100% 95%;
+    --background: 222.2 84% 4.9% / 0.85; 
+    --foreground: 210 40% 98%;
     --card: 220 30% 8%;
     --card-foreground: 45 100% 95%;
     --popover: 220 30% 8%;
@@ -232,8 +233,8 @@
 
   .tricolor {
     /* Indian Tricolor Theme */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;     /* Navy Blue (Ashoka Chakra) */
+    --background: 0 0% 98% / 0.9; /* Slightly opaque white for tricolor */
+      --foreground: 222.2 84% 4.9%;    /* Navy Blue (Ashoka Chakra) */
     --card: 0 0% 98%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
@@ -515,4 +516,28 @@
 @keyframes consciousness-flow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* --- Custom Background Theme Layers --- */
+
+/* Default (Light Theme) - Soft Ethereal */
+.theme-bg-layer {
+    background: linear-gradient(45deg, #eff6ff, #f5f3ff, #e0e7ff);
+    background-size: 400% 400%;
+    animation: aurora-flow 25s ease infinite;
+    opacity: 1;
+}
+
+/* Dark Theme Override - Deep Cosmic */
+.dark .theme-bg-layer {
+    background: radial-gradient(ellipse at top, #1e293b, #0f172a, #020617);
+    background-size: 200% 200%;
+    animation: cosmic-flow 20s ease infinite;
+}
+
+/* Tricolor Theme Override - Soft Harmony */
+.tricolor .theme-bg-layer {
+    background: linear-gradient(135deg, #fff7ed, #ffffff, #ecfdf5);
+    background-size: 400% 400%;
+    animation: aurora-flow 25s ease infinite;
 }

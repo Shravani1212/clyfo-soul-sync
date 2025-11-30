@@ -81,57 +81,40 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "infinity-pulse": {
-          "0%, 100%": {
-            transform: "scale(1)",
-            opacity: "1",
-          },
-          "50%": {
-            transform: "scale(1.1)",
-            opacity: "0.8",
-          },
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.1)", opacity: "0.8" },
         },
         "cosmic-glow": {
-          "0%": {
-            boxShadow: "0 0 20px hsl(45 100% 65% / 0.3)",
-          },
-          "100%": {
-            boxShadow: "0 0 40px hsl(45 100% 65% / 0.6), 0 0 80px hsl(260 60% 65% / 0.3)",
-          },
+          "0%": { boxShadow: "0 0 20px hsl(45 100% 65% / 0.3)" },
+          "100%": { boxShadow: "0 0 40px hsl(45 100% 65% / 0.6), 0 0 80px hsl(260 60% 65% / 0.3)" },
         },
         "consciousness-flow": {
-          "0%": {
-            transform: "rotate(0deg)",
-          },
-          "100%": {
-            transform: "rotate(360deg)",
-          },
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // NEW ANIMATIONS FOR BACKGROUNDS
+        "pan-image": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "aurora-tricolor": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -140,6 +123,8 @@ export default {
         "cosmic-glow": "cosmic-glow 3s ease-in-out infinite alternate",
         "consciousness-flow": "consciousness-flow 8s linear infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        "pan-image": "pan-image 30s ease-in-out infinite",
+        "aurora-tricolor": "aurora-tricolor 15s ease infinite",
       },
     },
   },

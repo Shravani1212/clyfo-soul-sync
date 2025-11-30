@@ -21,7 +21,7 @@ import Leaderboard from "@/pages/Leaderboard";
 import Tools from "@/pages/Tools";
 import Support from "@/pages/Support";
 import NotFound from "@/pages/NotFound";
-
+import AnimatedBackground from "@/components/AnimatedBackground";
 const queryClient = new QueryClient();
 
 // Protected Route Component
@@ -58,6 +58,7 @@ const App = () => (
       <Toaster />
       
       <BrowserRouter>
+      <AnimatedBackground />
         <div className="min-h-screen bg-background">
           <Navbar />
           <main className="min-h-screen">
