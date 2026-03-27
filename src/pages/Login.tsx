@@ -127,12 +127,12 @@ const Login = () => {
       </div>
       
       <div className="w-full max-w-md relative z-10">
-        <div className="text-center mb-8 animate-fade-in-up">
+        <div className="text-center mb-8 animate-fade-in-up text-white">
           <img src={clyfoLogo} alt="CLYFO" className="h-16 w-auto mx-auto mb-4 rounded-lg shadow-cosmic" />
           <h1 className="text-3xl font-cosmic font-bold mb-2">
             Welcome to CLYFO<sup className="text-lg text-infinity-gold">369</sup>
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-white/80">
             Enter the Consciousness Operating System
           </p>
         </div>
@@ -350,8 +350,8 @@ const Login = () => {
             </Tabs>
 
             {/* Demo credentials UI shown on the login page */}
-            <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-              <p className="text-xs text-blue-200">
+            <div className="mt-4 p-3 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 rounded-lg">
+              <p className="text-xs text-blue-800 dark:text-blue-200">
                 <strong>Demo Credentials:</strong><br/>
                 📧 Email: aspirant@clyfo.com | Pass: password123<br/>
                 📧 Email: transformer@clyfo.com | Pass: password123<br/>
@@ -370,8 +370,8 @@ const Login = () => {
 
         {/* Path Selection Help */}
         <div className="mt-6 text-center animate-fade-in-up delay-500">
-          <p className="text-sm text-muted-foreground mb-2">Not sure which path to choose?</p>
-          <Button variant="link" className="text-primary text-sm">
+          <p className="text-sm text-white/80 mb-2">Not sure which path to choose?</p>
+          <Button variant="link" className="text-primary-foreground text-sm hover:text-white dark:text-primary">
             Take Our Consciousness Assessment →
           </Button>
         </div>

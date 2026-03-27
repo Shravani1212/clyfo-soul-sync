@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, Sparkles, Infinity } from "lucide-react";
 import cosmicHero1 from "@/assets/cosmic-hero-1.png";
-import cosmicHero2 from "@/assets/cosmic-hero-2.png";
-import clyfoAnimation from "@/assets/clyfo-animation.gif";
+import IndiaMap from "@/components/IndiaMap";
 
 const HeroNew = () => {
   return (
@@ -10,7 +9,7 @@ const HeroNew = () => {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-cosmic-saffron/5 via-background to-consciousness-purple/5" />
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `url(${cosmicHero1})`,
@@ -49,7 +48,7 @@ const HeroNew = () => {
                   <span className="text-sm font-medium text-primary">Consciousness Revolution</span>
                 </div>
               </div>
-              
+
               <h1 className="font-cosmic text-5xl md:text-7xl font-bold leading-tight">
                 <span className="gradient-infinity bg-clip-text text-transparent">
                   CLYFO
@@ -57,11 +56,11 @@ const HeroNew = () => {
                 <sup className="text-3xl text-infinity-gold">369</sup>
                 <span className="text-infinity-gold">(♾)</span>
               </h1>
-              
+
               <p className="text-3xl md:text-4xl font-bold text-foreground">
                 The Conscious Human OS
               </p>
-              
+
               <p className="text-xl text-muted-foreground max-w-2xl">
                 Where <span className="text-cosmic-saffron font-semibold">Enlightenment</span> meets{" "}
                 <span className="text-cosmic-green font-semibold">Employment</span>
@@ -71,12 +70,12 @@ const HeroNew = () => {
             {/* Key Points */}
             <div className="space-y-3 text-left">
               {[
-                "Life without CLYFO is 0 / dead",
+                "Every Life needs CLYFO",
                 "Quality filter VS overloaded raw content",
                 "Where there's a problem, there's a skill to resolve"
               ].map((point, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="flex items-start gap-3 animate-fade-in-up"
                   style={{ animationDelay: `${i * 0.2}s` }}
                 >
@@ -87,13 +86,13 @@ const HeroNew = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="gradient-cosmic text-background font-semibold group">
+            <div className="flex flex-col sm:flex-row gap-6 pt-6">
+              <Button size="lg" className="h-14 px-8 gradient-cosmic text-background font-bold rounded-xl shadow-lg hover:scale-105 transition-all group">
                 Join the Revolution
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10 group">
-                <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Button size="lg" variant="outline" className="h-14 px-8 rounded-xl border-primary/20 hover:bg-primary/5 transition-all group">
+                <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform text-primary" />
                 Watch Teaser
               </Button>
             </div>
@@ -118,14 +117,10 @@ const HeroNew = () => {
             <div className="relative">
               {/* Glowing Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-cosmic-saffron via-consciousness-purple to-cosmic-green rounded-full blur-3xl opacity-30 animate-pulse" />
-              
-              {/* Main Image */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
-                <img 
-                  src={clyfoAnimation} 
-                  alt="CLYFO Consciousness Animation" 
-                  className="w-full h-auto"
-                />
+
+              {/* India Map Visual */}
+              <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl bg-card/40 backdrop-blur-sm min-h-[350px] flex items-center justify-center p-4">
+                <IndiaMap />
               </div>
             </div>
 

@@ -1,338 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* CLYFO^369(♾) Consciousness Design System - Cosmic & Sacred */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
-
-@layer base {
-  :root {
-    /* Cosmic Consciousness Colors */
-   --background: 0 0% 100% / 0.85; /* Light mode transparency */
-    --foreground: 222.2 84% 4.9%;
-
-    /* Sacred Tri-color Cosmic Palette */
-    --cosmic-saffron: 25 100% 60%;
-    --cosmic-white: 0 0% 98%;
-    --cosmic-green: 140 50% 45%;
-    
-    /* Infinity & Consciousness */
-    --infinity-gold: 45 100% 65%;
-    --consciousness-purple: 260 60% 65%;
-    --cosmic-blue: 220 80% 60%;
-    
-    /* Sacred Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(25 100% 60%), hsl(45 100% 65%), hsl(140 50% 45%));
-    --gradient-infinity: linear-gradient(45deg, hsl(45 100% 65%), hsl(260 60% 65%));
-    --gradient-consciousness: linear-gradient(180deg, hsl(220 25% 5%), hsl(220 30% 10%));
-    --gradient-enlightenment: radial-gradient(circle, hsl(45 100% 65% / 0.3), transparent);
-
-    /* Elevated Design Tokens */
-    --primary: 45 100% 65%;
-    --primary-foreground: 220 25% 5%;
-    --secondary: 220 30% 15%;
-    --secondary-foreground: 45 100% 95%;
-    --accent: 260 60% 65%;
-    --accent-foreground: 220 25% 5%;
-    
-    /* Card System */
-    --card: 220 30% 8%;
-    --card-foreground: 45 100% 95%;
-    --popover: 220 30% 8%;
-    --popover-foreground: 45 100% 95%;
-    --border: 220 40% 20%;
-    --input: 220 30% 15%;
-    --ring: 45 100% 65%;
-    --muted: 220 30% 12%;
-    --muted-foreground: 45 60% 70%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    
-    /* Sacred Shadows & Effects */
-    --shadow-cosmic: 0 20px 60px -10px hsl(45 100% 65% / 0.3);
-    --shadow-consciousness: 0 0 80px hsl(260 60% 65% / 0.4);
-    --glow-infinity: drop-shadow(0 0 20px hsl(45 100% 65%));
-    
-    /* Animation Variables */
-    --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    --pulse-sacred: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-    --radius: 1rem;
-    
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .font-cosmic {
-    font-family: 'Orbitron', monospace;
-  }
-}
-
-@layer components {
-  /* Cosmic Animations */
-  .animate-infinity-pulse {
-    animation: infinity-pulse var(--pulse-sacred);
-  }
-  
-  .animate-cosmic-glow {
-    animation: cosmic-glow 3s ease-in-out infinite alternate;
-  }
-  
-  .animate-consciousness-flow {
-    animation: consciousness-flow 8s linear infinite;
-  }
-  
-  /* Sacred Gradients as Classes */
-  .gradient-cosmic {
-    background: var(--gradient-cosmic);
-  }
-  
-  .gradient-infinity {
-    background: var(--gradient-infinity);
-  }
-  
-  .gradient-consciousness {
-    background: var(--gradient-consciousness);
-  }
-  
-  .shadow-cosmic {
-    box-shadow: var(--shadow-cosmic);
-  }
-  
-  .shadow-consciousness {
-    box-shadow: var(--shadow-consciousness);
-  }
-  
-  .glow-infinity {
-    filter: var(--glow-infinity);
-  }
-}
-
-@keyframes infinity-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes cosmic-glow {
-  0% {
-    box-shadow: 0 0 20px hsl(45 100% 65% / 0.3);
-  }
-  100% {
-    box-shadow: 0 0 40px hsl(45 100% 65% / 0.6), 0 0 80px hsl(260 60% 65% / 0.3);
-  }
-}
-
-@keyframes consciousness-flow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-  
-}
 /* CLYFO^369(♾) Consciousness Design System */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
-
-@layer base {
-  :root {
-    /* Default Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-
-    /* Define cosmic vars for Light Mode fallback */
-    --cosmic-saffron: 25 100% 60%;
-    --cosmic-white: 220 15% 20%; /* Darker for contrast on white */
-    --cosmic-green: 140 50% 45%;
-    --infinity-gold: 45 100% 50%;
-    --consciousness-purple: 260 60% 55%;
-    
-    /* Gradients for Light */
-    --gradient-cosmic: linear-gradient(135deg, #FF9933, #ffffff, #138808);
-    --gradient-infinity: linear-gradient(45deg, #6366f1, #a855f7);
-    --gradient-consciousness: linear-gradient(180deg, #ffffff, #f8fafc);
-    --shadow-cosmic: 0 10px 30px -10px rgba(0,0,0,0.1);
-    --shadow-consciousness: 0 0 40px rgba(0,0,0,0.05);
-    
-    /* Animation Variables */
-    --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    --pulse-sacred: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .dark {
-    /* Cosmic Consciousness Colors (Your Original Dark Theme) */
-    --background: 222.2 84% 4.9% / 0.85; 
-    --foreground: 210 40% 98%;
-    --card: 220 30% 8%;
-    --card-foreground: 45 100% 95%;
-    --popover: 220 30% 8%;
-    --popover-foreground: 45 100% 95%;
-    --primary: 45 100% 65%;
-    --primary-foreground: 220 25% 5%;
-    --secondary: 220 30% 15%;
-    --secondary-foreground: 45 100% 95%;
-    --muted: 220 30% 12%;
-    --muted-foreground: 45 60% 70%;
-    --accent: 260 60% 65%;
-    --accent-foreground: 220 25% 5%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 40% 20%;
-    --input: 220 30% 15%;
-    --ring: 45 100% 65%;
-
-    /* Sacred Palette */
-    --cosmic-saffron: 25 100% 60%;
-    --cosmic-white: 0 0% 98%;
-    --cosmic-green: 140 50% 45%;
-    --infinity-gold: 45 100% 65%;
-    --consciousness-purple: 260 60% 65%;
-    --cosmic-blue: 220 80% 60%;
-
-    /* Gradients & Effects */
-    --gradient-cosmic: linear-gradient(135deg, hsl(25 100% 60%), hsl(45 100% 65%), hsl(140 50% 45%));
-    --gradient-infinity: linear-gradient(45deg, hsl(45 100% 65%), hsl(260 60% 65%));
-    --gradient-consciousness: linear-gradient(180deg, hsl(220 25% 5%), hsl(220 30% 10%));
-    --shadow-cosmic: 0 20px 60px -10px hsl(45 100% 65% / 0.3);
-    --shadow-consciousness: 0 0 80px hsl(260 60% 65% / 0.4);
-    --glow-infinity: drop-shadow(0 0 20px hsl(45 100% 65%));
-  }
-
-  .tricolor {
-    /* Indian Tricolor Theme */
-    --background: 0 0% 98% / 0.9; /* Slightly opaque white for tricolor */
-      --foreground: 222.2 84% 4.9%;    /* Navy Blue (Ashoka Chakra) */
-    --card: 0 0% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    
-    /* Saffron Primary */
-    --primary: 25 100% 55%;        
-    --primary-foreground: 0 0% 100%;
-    
-    /* Green Secondary */
-    --secondary: 140 60% 35%;      
-    --secondary-foreground: 0 0% 100%;
-    
-    --muted: 25 100% 96%;          /* Light Saffron Tint */
-    --muted-foreground: 222 47% 40%;
-    
-    --accent: 140 50% 96%;         /* Light Green Tint */
-    --accent-foreground: 140 60% 35%;
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    
-    --border: 25 60% 80%;         /* Light Saffron Border */
-    --input: 140 40% 80%;          /* Light Green Input Border */
-    --ring: 25 100% 60%;           /* Saffron Ring */
-
-    /* Variables for components */
-    --cosmic-saffron: 25 100% 55%;
-    --cosmic-green: 140 60% 35%;
-    --cosmic-white: 222 47% 11%;
-    --infinity-gold: 45 100% 50%;
-    --consciousness-purple: 222 47% 20%; /* Navy Blue variant */
-
-    /* Custom Tricolor Gradients */
-    --gradient-cosmic: linear-gradient(135deg, #FF9933, #FFFFFF, #138808);
-    --gradient-infinity: linear-gradient(45deg, #FF9933, #138808);
-    --gradient-consciousness: linear-gradient(180deg, #FF993315, #FFFFFF, #13880815);
-    --shadow-cosmic: 0 20px 60px -10px rgba(255, 153, 51, 0.3);
-    --shadow-consciousness: 0 0 80px rgba(19, 136, 8, 0.2);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-  }
-  .font-cosmic {
-    font-family: 'Orbitron', monospace;
-  }
-}
-
-@layer components {
-  .animate-infinity-pulse {
-    animation: infinity-pulse var(--pulse-sacred);
-  }
-  .animate-cosmic-glow {
-    animation: cosmic-glow 3s ease-in-out infinite alternate;
-  }
-  .animate-consciousness-flow {
-    animation: consciousness-flow 8s linear infinite;
-  }
-  .gradient-cosmic {
-    background: var(--gradient-cosmic);
-  }
-  .gradient-infinity {
-    background: var(--gradient-infinity);
-  }
-  .gradient-consciousness {
-    background: var(--gradient-consciousness);
-  }
-  .shadow-cosmic {
-    box-shadow: var(--shadow-cosmic);
-  }
-  .shadow-consciousness {
-    box-shadow: var(--shadow-consciousness);
-  }
-}
-
-@keyframes infinity-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-@keyframes cosmic-glow {
-  0% { box-shadow: 0 0 20px hsl(45 100% 65% / 0.3); }
-  100% { box-shadow: 0 0 40px hsl(45 100% 65% / 0.6), 0 0 80px hsl(260 60% 65% / 0.3); }
-}
-
-@keyframes consciousness-flow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -415,51 +87,305 @@
   }
 
   .tricolor {
-    /* Indian Tricolor Theme */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;     /* Navy Blue (Ashoka Chakra) */
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    /* Beautiful Indian Tricolor Theme */
+    --background: 30 20% 98%;      /* Very soft warm white */
+    --foreground: 222 47% 11%;     /* Deep Navy Blue */
+    --card: 0 0% 100%;             /* Crisp White */
+    --card-foreground: 222 47% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 222 47% 15%;
     
-    /* Saffron Primary */
-    --primary: 25 100% 55%;        
+    /* Vibrant Saffron Primary */
+    --primary: 25 100% 50%;        
     --primary-foreground: 0 0% 100%;
     
-    /* Green Secondary */
+    /* Rich Green Secondary */
     --secondary: 140 60% 35%;      
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 25 100% 96%;
-    --muted-foreground: 222 47% 40%;
+    --muted: 25 30% 94%;           /* Soft tinted white */
+    --muted-foreground: 222 30% 40%;
     
-    --accent: 140 50% 96%;
-    --accent-foreground: 140 60% 35%;
+    --accent: 25 100% 95%;         /* Very light saffron for hover */
+    --accent-foreground: 25 100% 40%;
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 25 60% 80%;
-    --input: 140 40% 80%;
-    --ring: 25 100% 60%;
+    --border: 25 20% 85%;
+    --input: 25 20% 90%;
+    --ring: 25 100% 50%;
 
     /* Theme Specific Colors */
-    --cosmic-saffron: 25 100% 55%;
-    --cosmic-green: 140 60% 35%;
-    --cosmic-white: 222 47% 11%;
-    --infinity-gold: 45 100% 50%;
-    --consciousness-purple: 222 47% 20%;
+    --cosmic-saffron: 28 100% 50%; /* #FF9933 exact */
+    --cosmic-green: 130 80% 30%;   /* #138808 exact */
+    --cosmic-white: 0 0% 100%;
+    --infinity-gold: 45 100% 45%;  
+    --consciousness-purple: 240 100% 25%; /* #000080 Ashoka Chakra */
 
-    /* UPDATED: Navy Blue Gradient for Buttons 
-       This ensures white text is visible and represents the Ashoka Chakra.
-    */
-    --gradient-cosmic: linear-gradient(135deg, #000080, #1e3a8a); 
-    
-    --gradient-infinity: linear-gradient(45deg, #FF9933, #138808);
-    --gradient-consciousness: linear-gradient(180deg, #fff7ed, #ffffff, #f0fdf4);
-    --shadow-cosmic: 0 20px 60px -10px rgba(0, 0, 128, 0.2);
-    --shadow-consciousness: 0 0 80px rgba(255, 153, 51, 0.1);
+    /* Beautiful Vibrant Gradients */
+    --gradient-cosmic: linear-gradient(135deg, #FF9933 0%, #FFB064 40%, #209915 100%); 
+    --gradient-infinity: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+    --gradient-consciousness: linear-gradient(180deg, rgba(255,153,51,0.05), rgba(19,136,8,0.05));
+    --shadow-cosmic: 0 10px 40px -10px rgba(255, 153, 51, 0.25), 0 10px 40px -10px rgba(19, 136, 8, 0.25);
+    --shadow-consciousness: 0 0 50px rgba(0, 0, 128, 0.1);
+  }
+
+  .neon {
+    /* Cyberpunk / Neon Theme */
+    --background: 240 20% 4%;
+    --foreground: 300 100% 80%;
+    --card: 240 20% 6%;
+    --card-foreground: 310 100% 85%;
+    --popover: 240 20% 6%;
+    --popover-foreground: 310 100% 85%;
+    --primary: 180 100% 50%;      /* Bright Cyan */
+    --primary-foreground: 240 20% 4%;
+    --secondary: 330 100% 50%;    /* Hot Pink */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 20% 12%;
+    --muted-foreground: 300 30% 60%;
+    --accent: 280 100% 60%;       /* Purple */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 330 100% 40%;
+    --input: 240 20% 15%;
+    --ring: 180 100% 50%;
+
+    --cosmic-saffron: 330 100% 50%;
+    --cosmic-white: 180 100% 80%;
+    --cosmic-green: 180 100% 50%;
+    --infinity-gold: 180 100% 50%;
+    --consciousness-purple: 280 100% 60%;
+    --cosmic-blue: 300 100% 50%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(330 100% 50%), hsl(280 100% 60%), hsl(180 100% 50%));
+    --gradient-infinity: linear-gradient(45deg, hsl(180 100% 50%), hsl(330 100% 50%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(240 20% 4%), hsl(280 100% 10%));
+    --shadow-cosmic: 0 0 20px hsl(180 100% 50% / 0.5), 0 0 40px hsl(330 100% 50% / 0.3);
+    --shadow-consciousness: 0 0 80px hsl(280 100% 60% / 0.4);
+    --glow-infinity: drop-shadow(0 0 20px hsl(330 100% 50%));
+  }
+
+  .ocean {
+    /* Ocean / Abyss Theme */
+    --background: 220 50% 8%;
+    --foreground: 180 50% 90%;
+    --card: 220 50% 10%;
+    --card-foreground: 180 50% 90%;
+    --popover: 220 50% 10%;
+    --popover-foreground: 180 50% 90%;
+    --primary: 190 90% 50%;       /* Vivid Cyan Blue */
+    --primary-foreground: 220 50% 8%;
+    --secondary: 210 60% 30%;     /* Deep Blue */
+    --secondary-foreground: 180 50% 90%;
+    --muted: 220 50% 15%;
+    --muted-foreground: 180 30% 60%;
+    --accent: 170 80% 40%;        /* Teal */
+    --accent-foreground: 220 50% 8%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 220 50% 8%;
+    --border: 210 60% 25%;
+    --input: 220 50% 15%;
+    --ring: 190 90% 50%;
+
+    --cosmic-saffron: 160 80% 50%;
+    --cosmic-white: 180 50% 95%;
+    --cosmic-green: 150 70% 40%;
+    --infinity-gold: 190 90% 60%;
+    --consciousness-purple: 210 80% 40%;
+    --cosmic-blue: 200 90% 50%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(210 60% 30%), hsl(190 90% 50%), hsl(170 80% 40%));
+    --gradient-infinity: linear-gradient(45deg, hsl(190 90% 50%), hsl(210 80% 40%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(220 50% 8%), hsl(210 60% 15%));
+    --shadow-cosmic: 0 20px 60px -10px hsl(190 90% 50% / 0.3);
+    --shadow-consciousness: 0 0 80px hsl(170 80% 40% / 0.4);
+    --glow-infinity: drop-shadow(0 0 20px hsl(190 90% 50%));
+  }
+
+  .forest {
+    /* Earth / Forest Theme */
+    --background: 140 30% 5%;
+    --foreground: 110 30% 85%;
+    --card: 140 30% 7%;
+    --card-foreground: 110 30% 85%;
+    --popover: 140 30% 7%;
+    --popover-foreground: 110 30% 85%;
+    --primary: 130 60% 40%;       /* Leaf Green */
+    --primary-foreground: 140 30% 5%;
+    --secondary: 40 40% 30%;      /* Earth Brown/Gold */
+    --secondary-foreground: 110 30% 85%;
+    --muted: 140 30% 12%;
+    --muted-foreground: 110 20% 60%;
+    --accent: 80 50% 40%;         /* Moss Green */
+    --accent-foreground: 140 30% 5%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 130 30% 20%;
+    --input: 140 30% 12%;
+    --ring: 130 60% 40%;
+
+    --cosmic-saffron: 40 60% 50%;
+    --cosmic-white: 110 30% 90%;
+    --cosmic-green: 130 60% 40%;
+    --infinity-gold: 60 70% 40%;
+    --consciousness-purple: 140 50% 30%;
+    --cosmic-blue: 170 40% 40%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(130 60% 40%), hsl(80 50% 40%), hsl(40 40% 30%));
+    --gradient-infinity: linear-gradient(45deg, hsl(130 60% 40%), hsl(60 70% 40%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(140 30% 5%), hsl(130 40% 10%));
+    --shadow-cosmic: 0 20px 60px -10px hsl(130 60% 40% / 0.3);
+    --shadow-consciousness: 0 0 80px hsl(80 50% 40% / 0.4);
+    --glow-infinity: drop-shadow(0 0 20px hsl(130 60% 40%));
+  }
+
+  .sunset {
+    /* Sunset Theme */
+    --background: 340 40% 8%;
+    --foreground: 30 60% 90%;
+    --card: 340 40% 10%;
+    --card-foreground: 30 60% 90%;
+    --popover: 340 40% 10%;
+    --popover-foreground: 30 60% 90%;
+    --primary: 20 90% 55%;        /* Sunset Orange */
+    --primary-foreground: 340 40% 8%;
+    --secondary: 330 60% 30%;     /* Deep Crimson/Pink */
+    --secondary-foreground: 30 60% 90%;
+    --muted: 340 40% 15%;
+    --muted-foreground: 30 40% 60%;
+    --accent: 45 80% 50%;         /* Warm Gold/Yellow */
+    --accent-foreground: 340 40% 8%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 30 60% 90%;
+    --border: 330 60% 25%;
+    --input: 340 40% 15%;
+    --ring: 20 90% 55%;
+
+    --cosmic-saffron: 20 90% 55%;
+    --cosmic-white: 30 60% 95%;
+    --cosmic-green: 45 80% 50%;
+    --infinity-gold: 40 90% 60%;
+    --consciousness-purple: 330 60% 40%;
+    --cosmic-blue: 350 70% 50%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(330 60% 30%), hsl(20 90% 55%), hsl(45 80% 50%));
+    --gradient-infinity: linear-gradient(45deg, hsl(20 90% 55%), hsl(45 80% 50%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(340 40% 8%), hsl(330 50% 15%));
+    --shadow-cosmic: 0 20px 60px -10px hsl(20 90% 55% / 0.4);
+    --shadow-consciousness: 0 0 80px hsl(45 80% 50% / 0.3);
+    --glow-infinity: drop-shadow(0 0 20px hsl(20 90% 55%));
+  }
+  .purple {
+    /* Purple Gradient Theme */
+    --background: 270 50% 10%;
+    --foreground: 270 20% 90%;
+    --card: 270 50% 15%;
+    --card-foreground: 270 20% 90%;
+    --popover: 270 50% 15%;
+    --popover-foreground: 270 20% 90%;
+    --primary: 270 100% 70%;
+    --primary-foreground: 270 50% 10%;
+    --secondary: 290 60% 30%;
+    --secondary-foreground: 270 20% 90%;
+    --muted: 270 30% 20%;
+    --muted-foreground: 270 20% 70%;
+    --accent: 300 70% 50%;
+    --accent-foreground: 270 50% 10%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 270 20% 90%;
+    --border: 270 40% 25%;
+    --input: 270 40% 25%;
+    --ring: 270 100% 70%;
+
+    --cosmic-saffron: 25 100% 60%;
+    --cosmic-white: 270 20% 95%;
+    --cosmic-green: 140 50% 45%;
+    --infinity-gold: 45 100% 65%;
+    --consciousness-purple: 270 100% 75%;
+    --cosmic-blue: 220 80% 60%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 100% 60%), hsl(290 80% 50%), hsl(310 70% 60%));
+    --gradient-infinity: linear-gradient(45deg, hsl(270 100% 70%), hsl(300 70% 50%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(270 50% 10%), hsl(270 60% 20%));
+    /* The user specified a "purple coloured gradient theme", so we make everything purple-toned */
+    --shadow-cosmic: 0 20px 60px -10px hsl(270 100% 60% / 0.4);
+    --shadow-consciousness: 0 0 80px hsl(290 80% 50% / 0.3);
+    --glow-infinity: drop-shadow(0 0 20px hsl(270 100% 70%));
+  }
+
+  .academia {
+    /* Professional / Study Theme (Soft Sky Blue & Crisp White) */
+    --background: 210 60% 98%;     /* Barely-blue white - like clean notebook */
+    --foreground: 215 70% 20%;     /* Deep sapphire for excellent readability */
+    --card: 0 0% 100%;
+    --card-foreground: 215 70% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 70% 20%;
+    --primary: 213 90% 50%;        /* Bright, clear academic blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 30% 85%;      /* Light powder blue */
+    --secondary-foreground: 215 70% 20%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 30% 45%;
+    --accent: 210 80% 93%;         /* Whisper blue */
+    --accent-foreground: 213 90% 40%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 30% 88%;
+    --input: 210 40% 94%;
+    --ring: 213 90% 50%;
+
+    --cosmic-saffron: 213 90% 55%;
+    --cosmic-white: 0 0% 100%;
+    --cosmic-green: 195 70% 45%;
+    --infinity-gold: 200 70% 55%;
+    --consciousness-purple: 220 80% 45%;
+    --cosmic-blue: 213 90% 55%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(213 90% 60%), hsl(200 80% 55%), hsl(225 80% 50%));
+    --gradient-infinity: linear-gradient(45deg, hsl(195 80% 60%), hsl(213 90% 55%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(210 60% 98%), hsl(210 50% 94%));
+    --shadow-cosmic: 0 8px 30px -8px rgba(30, 100, 200, 0.12);
+    --shadow-consciousness: 0 0 40px rgba(30, 100, 200, 0.04);
+  }
+
+  .sage {
+    /* Study Sage - Parchment & Soft Herb Green */
+    --background: 70 30% 97%;      /* Warm cream/parchment white */
+    --foreground: 140 35% 20%;     /* Deep forest for readability */
+    --card: 60 30% 100%;
+    --card-foreground: 140 35% 20%;
+    --popover: 60 30% 100%;
+    --popover-foreground: 140 35% 20%;
+    --primary: 145 45% 42%;        /* Comfortable sage/herb green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 70 25% 88%;       /* Warm beige-green */
+    --secondary-foreground: 140 35% 20%;
+    --muted: 70 20% 93%;
+    --muted-foreground: 100 20% 40%;
+    --accent: 145 40% 93%;         /* Barely-there mint */
+    --accent-foreground: 145 45% 32%;
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 70 20% 87%;
+    --input: 70 25% 92%;
+    --ring: 145 45% 42%;
+
+    --cosmic-saffron: 145 40% 50%;
+    --cosmic-white: 0 0% 100%;
+    --cosmic-green: 145 45% 42%;
+    --infinity-gold: 80 40% 48%;
+    --consciousness-purple: 165 40% 30%;
+    --cosmic-blue: 155 35% 45%;
+
+    --gradient-cosmic: linear-gradient(135deg, hsl(145 45% 48%), hsl(120 35% 38%), hsl(80 30% 40%));
+    --gradient-infinity: linear-gradient(45deg, hsl(80 35% 55%), hsl(145 45% 45%));
+    --gradient-consciousness: linear-gradient(180deg, hsl(70 30% 97%), hsl(70 25% 92%));
+    --shadow-cosmic: 0 8px 30px -8px rgba(50, 130, 80, 0.10);
+    --shadow-consciousness: 0 0 40px rgba(50, 130, 80, 0.04);
   }
 }
 
@@ -468,11 +394,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
   .font-cosmic {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Outfit', sans-serif;
   }
 }
 
@@ -518,6 +444,25 @@
   100% { transform: rotate(360deg); }
 }
 
+@keyframes fall-and-pulse {
+  0% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fall-and-pulse {
+  animation: fall-and-pulse 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-marquee-scroll {
+  animation: marquee-scroll 30s linear infinite;
+}
+
 /* --- Custom Background Theme Layers --- */
 
 /* Default (Light Theme) - Soft Ethereal */
@@ -537,7 +482,56 @@
 
 /* Tricolor Theme Override - Soft Harmony */
 .tricolor .theme-bg-layer {
-    background: linear-gradient(135deg, #fff7ed, #ffffff, #ecfdf5);
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.1), rgba(255, 255, 255, 0.8), rgba(19, 136, 8, 0.1));
+    background-size: 400% 400%;
+    animation: aurora-tricolor 15s ease infinite;
+}
+
+/* Neon Theme Override */
+.neon .theme-bg-layer {
+    background: radial-gradient(circle at bottom right, #2d0a42, #0d041a, #000000);
+    background-size: 200% 200%;
+    animation: cosmic-flow 20s ease infinite;
+}
+
+/* Ocean Theme Override */
+.ocean .theme-bg-layer {
+    background: radial-gradient(ellipse at top left, #0e3b5e, #051624, #010810);
+    background-size: 200% 200%;
+    animation: cosmic-flow 25s ease infinite alternate;
+}
+
+/* Forest Theme Override */
+.forest .theme-bg-layer {
+    background: linear-gradient(135deg, #09210e, #030d05, #000000);
+    background-size: 200% 200%;
+    animation: cosmic-flow 30s ease infinite;
+}
+
+/* Sunset Theme Override */
+.sunset .theme-bg-layer {
+    background: linear-gradient(180deg, #3d0c15, #1f0407, #0a0101);
+    background-size: 200% 200%;
+    animation: cosmic-flow 20s ease infinite;
+}
+
+/* Purple Theme Override */
+.purple .theme-bg-layer {
+    background: linear-gradient(135deg, #1b0238, #2e0854, #4a0072);
+    background-size: 200% 200%;
+    animation: cosmic-flow 25s ease infinite alternate;
+}
+
+/* Academia Theme Override */
+.academia .theme-bg-layer {
+    background: linear-gradient(135deg, rgba(230, 240, 255, 0.8), rgba(200, 220, 255, 0.5), #ffffff);
     background-size: 400% 400%;
     animation: aurora-flow 25s ease infinite;
+}
+
+/* Sage Theme Override */
+.sage .theme-bg-layer {
+    background: linear-gradient(135deg, rgba(235, 245, 230, 0.8), rgba(210, 235, 205, 0.5), #ffffff);
+    background-size: 400% 400%;
+    animation: aurora-flow 30s ease infinite;
 }

@@ -1,5 +1,6 @@
 import { Baby, BookOpen, Users, Home, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const AgeWiseJourney = () => {
   const groups = [
@@ -11,7 +12,8 @@ const AgeWiseJourney = () => {
       focus: "Emotional Safety & Early Awareness",
       description: "Build strong emotional foundation with love, play, and joyful development",
       color: "cosmic-saffron",
-      gradient: "from-cosmic-saffron/20 to-cosmic-saffron/5"
+      gradient: "from-cosmic-saffron/20 to-cosmic-saffron/5",
+      image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=400&q=80"
     },
     {
       letter: "L",
@@ -21,7 +23,8 @@ const AgeWiseJourney = () => {
       focus: "Joyful Learning & Tech Balance",
       description: "Prevent stress through mindful schooling and digital discipline",
       color: "consciousness-purple",
-      gradient: "from-consciousness-purple/20 to-consciousness-purple/5"
+      gradient: "from-consciousness-purple/20 to-consciousness-purple/5",
+      image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=400&q=80"
     },
     {
       letter: "Y",
@@ -31,7 +34,8 @@ const AgeWiseJourney = () => {
       focus: "Skill, Purpose & Employment",
       description: "Prevent depression while empowering careers and spiritual strength",
       color: "cosmic-green",
-      gradient: "from-cosmic-green/20 to-cosmic-green/5"
+      gradient: "from-cosmic-green/20 to-cosmic-green/5",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80"
     },
     {
       letter: "F",
@@ -41,7 +45,8 @@ const AgeWiseJourney = () => {
       focus: "Financial & Emotional Balance",
       description: "Reduce anxiety, improve parenting, and build job resilience",
       color: "infinity-gold",
-      gradient: "from-infinity-gold/20 to-infinity-gold/5"
+      gradient: "from-infinity-gold/20 to-infinity-gold/5",
+      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80"
     },
     {
       letter: "O",
@@ -51,7 +56,8 @@ const AgeWiseJourney = () => {
       focus: "Dignity, Wellness & Legacy",
       description: "Reduce loneliness and increase meaningful community contributions",
       color: "cosmic-blue",
-      gradient: "from-blue-400/20 to-blue-400/5"
+      gradient: "from-blue-400/20 to-blue-400/5",
+      image: "https://images.unsplash.com/photo-1447433589675-4aaa56a4015a?auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -76,9 +82,15 @@ const AgeWiseJourney = () => {
                 className={`relative group hover:scale-105 transition-all duration-500 animate-fade-in-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`bg-gradient-to-br ${group.gradient} backdrop-blur-sm rounded-2xl p-6 border border-${group.color}/30 shadow-cosmic hover:shadow-consciousness transition-all duration-300`}>
+                <div className={`relative bg-gradient-to-br ${group.gradient} backdrop-blur-sm rounded-2xl p-6 border border-${group.color}/30 shadow-cosmic hover:shadow-consciousness transition-all duration-300 overflow-hidden group`}>
+                  {/* Background Image with Overlay */}
+                  <div 
+                    className="absolute inset-0 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-700 bg-cover bg-center z-0"
+                    style={{ backgroundImage: `url("${group.image}")` }}
+                  />
+                  
                   {/* Letter Badge */}
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="relative z-10 flex justify-between items-start mb-4">
                     <div className={`w-12 h-12 rounded-full bg-${group.color}/20 border-2 border-${group.color} flex items-center justify-center`}>
                       <span className={`font-cosmic text-xl font-bold text-${group.color}`}>
                         {group.letter}
@@ -88,7 +100,7 @@ const AgeWiseJourney = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-3">
+                  <div className="relative z-10 space-y-3">
                     <div>
                       <h3 className={`font-cosmic text-xl font-bold text-${group.color} mb-1`}>
                         {group.title}
@@ -110,13 +122,15 @@ const AgeWiseJourney = () => {
 
                   {/* Hover Action */}
                   <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className={`w-full border-${group.color} text-${group.color} hover:bg-${group.color}/10 text-xs`}
-                    >
-                      Learn More
-                    </Button>
+                    <Link to={`/journey/${group.title.toLowerCase()}`}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className={`w-full border-${group.color} text-${group.color} hover:bg-${group.color}/10 text-xs`}
+                      >
+                        Learn More
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 

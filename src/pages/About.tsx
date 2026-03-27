@@ -11,40 +11,40 @@ const About = () => {
 
   const features = [
     {
-      icon: <Brain className="h-8 w-8" />,
-      title: "Consciousness OS",
-      description: "Revolutionary human operating system integrating ancient wisdom with modern technology",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80"
-    },
-    {
-      icon: <Heart className="h-8 w-8" />,
-      title: "Holistic Growth",
-      description: "6-dimensional approach: Psychological, Spiritual, Physical, Environmental, Tech, Financial",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
-    },
-    {
-      icon: <Target className="h-8 w-8" />,
-      title: "Purpose-Driven",
-      description: "Where Enlightenment meets Employment through the 3-6-9 consciousness framework",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80"
-    },
-    {
       icon: <Users className="h-8 w-8" />,
-      title: "Age-Wise Journey",
-      description: "C-L-Y-F-O lifecycle: Children, Learners, Youth, Family, Olders",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+      title: "Children (1-12)",
+      description: "Little CLYFOs: Gamified rituals and Vedic+Tech literacy to shape character and EQ before skills.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Dual Wings",
-      description: "Universe of HaiC (Service) + World of Jnani (Product) integration",
-      image: "https://images.unsplash.com/photo-1550439062-57db66baf773?w=600&q=80"
+      title: "Youth Entrepreneurs",
+      description: "21-Day Leadership Gym: AI-powered mentors and VR drills to build AI-proof careers and resilient leaders.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      icon: <Heart className="h-8 w-8" />,
+      title: "Families (30-50)",
+      description: "Family Reset: Integrating financial literacy and emotional stability for stronger, stress-free homes.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      icon: <Brain className="h-8 w-8" />,
+      title: "Elders (50+)",
+      description: "Wisdom Hubs: Connecting seniors with youth to monetize wisdom and lead national mentoring grids.",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      icon: <Target className="h-8 w-8" />,
+      title: "Village Transformation",
+      description: "Rural Leadership: Grooming mentors in every mandal to turn villages into economic and conscious hubs.",
+      image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: <Globe className="h-8 w-8" />,
       title: "Viksit Bharat 2047",
-      description: "Aligned with India's vision for conscious human evolution globally",
-      image: "https://images.unsplash.com/photo-1526628652108-aa09b6a3a9d8?w=600&q=80"
+      description: "National OS: Aligning GDP growth with social wellness to make India a Moral-Economic Superpower.",
+      image: "https://images.unsplash.com/photo-1532375811400-d7039ef1b3ee?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -66,21 +66,21 @@ const About = () => {
       text:
         "Research indicates that regular meditation practice can lead to measurable changes in brain structure, including increased gray matter density in regions associated with self-awareness, compassion and introspection. Meditation enhances neuroplasticity and boosts focus and attention.",
       image:
-        "https://images.unsplash.com/photo-1542736667-069246bdbc6d?w=1600&q=80"
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Reduces Stress and Improves Resilience",
       text:
         "Meditation down-regulates amygdala activity, improving emotional resilience and enabling better coping with stressors while maintaining calm.",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80"
+        "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "AI‑Powered Validation of Meditative States",
       text:
         "Advances in brain imaging and AI provide objective evidence of distinct brain activity patterns during deep meditative states, validating transformative effects of meditation.",
       image:
-        "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600&q=80"
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -93,15 +93,15 @@ const About = () => {
 
   const quotes = [
     {
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
       quote: '“You have the right to work, but never to the fruit of work.” — Resilience in a distracted world'
     },
     {
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
       quote: '“The mind is restless, turbulent... but can be controlled by practice and detachment.” — Mindfulness in digital overwhelm'
     },
     {
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&q=80&w=1200&auto=format&fit=crop", // alternate image
+      image: "https://images.unsplash.com/photo-1542362567-b044cd057ca5?auto=format&fit=crop&w=1200&q=80",
       quote: '“Let a man lift himself by himself... the mind is both friend and enemy.” — Inner mastery in AI-driven chaos'
     }
   ];
@@ -134,84 +134,84 @@ const About = () => {
     {
       name: "Ava Sharma",
       role: "Founder",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ava",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
       bio: "Visionary leader and consciousness pioneer",
       specialty: "Strategic Direction & Vision"
     },
     {
       name: "Ethan Patel",
       role: "Co-Founder",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ethan",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
       bio: "Tech innovator and system architect",
       specialty: "Technology & Innovation"
     },
     {
       name: "Olivia Singh",
       role: "Guru by Dimension",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Olivia",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
       bio: "Spiritual guide and consciousness mentor",
       specialty: "Spiritual & Psychological Dimensions"
     },
     {
       name: "Noah Verma",
       role: "Transformer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Noah",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
       bio: "Community leader and transformation catalyst",
       specialty: "Community Engagement & Mentoring"
     },
     {
       name: "Isabella Kapoor",
       role: "Aspirant",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
       bio: "Learning advocate and content creator",
       specialty: "Educational Content & Outreach"
     },
     {
       name: "Liam Khanna",
       role: "Founder",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Liam",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
       bio: "Operations and wellness specialist",
       specialty: "Program Operations & Wellness"
     },
     {
       name: "Sophia Mehra",
       role: "Co-Founder",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophia",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=400&q=80",
       bio: "Creative strategist and brand architect",
       specialty: "Brand & Creative Strategy"
     },
     {
       name: "Jackson Joshi",
       role: "Guru by Dimension",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jackson",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
       bio: "Environmental and financial guide",
       specialty: "Environmental & Financial Dimensions"
     },
     {
       name: "Mia Malhotra",
       role: "Transformer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mia",
+      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=400&q=80",
       bio: "Impact strategist and social leader",
       specialty: "Social Impact & Community Building"
     },
     {
       name: "Aiden Gupta",
       role: "Aspirant",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aiden",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
       bio: "Tech enabler and platform developer",
       specialty: "Platform Development & Tech Support"
     },
     {
       name: "Amelia Bhatt",
       role: "Transformer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Amelia",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80",
       bio: "Wellness advocate and lifestyle coach",
       specialty: "Wellness & Lifestyle Coaching"
     },
     {
       name: "Lucas Iyer",
       role: "Aspirant",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lucas",
+      image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=400&q=80",
       bio: "Data analyst and insights specialist",
       specialty: "Analytics & Performance Tracking"
     }
@@ -269,8 +269,7 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-cosmic font-bold mb-6 text-cosmic-saffron">Our Mission</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  To rebirth the human cycle with clarity, consciousness, and core values - transforming beings from
-                  ignorance to enlightenment, stress to service, jobs to joy across every heart, soul, home, and device.
+                  To rebirth the human lifecycle with clarity, consciousness, and core values—transforming beings from ignorance to enlightenment, stress to service, and jobs to joy across every heart, soul, home, and device.
                 </p>
                 <div className="gradient-cosmic h-1 w-20 rounded-full"></div>
               </CardContent>
@@ -280,8 +279,7 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-cosmic font-bold mb-6 text-consciousness-purple">Our Vision</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  To align Bharat with its destiny as the Global Headquarters of Human Consciousness Evolution -
-                  elevating every soul from confusion to clarity, chaos to consciousness.
+                  To align Bharat with its destiny as the Global Headquarters of Human Consciousness Evolution—elevating every soul from confusion to clarity and chaos to consciousness for a Viksit Bharat 2047.
                 </p>
                 <div className="gradient-infinity h-1 w-20 rounded-full"></div>
               </CardContent>
@@ -323,20 +321,35 @@ const About = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-cosmic font-bold mb-12 animate-fade-in-up">The 3-6-9 Eternal Framework</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="animate-fade-in-up">
+            <div className="animate-fade-in-up bg-card/20 p-8 rounded-3xl border border-cosmic-saffron/20 group hover:bg-cosmic-saffron/5 transition-all">
               <div className="text-6xl font-cosmic font-bold text-cosmic-saffron mb-4">3</div>
-              <h3 className="text-2xl font-bold mb-4">Core C's</h3>
-              <p className="text-muted-foreground">{coreCs.join(", ")}</p>
+              <h3 className="text-2xl font-bold mb-4">Morning: Sparking Creation</h3>
+              <p className="text-muted-foreground mb-4">Affirm your intention 3 times upon waking to seed the quantum field and align your day's consciousness.</p>
+              <ul className="text-sm text-left space-y-2 text-muted-foreground/80">
+                <li>• Write intention 3x</li>
+                <li>• 3 deep conscious breaths</li>
+                <li>• 3 minutes of visualization</li>
+              </ul>
             </div>
-            <div className="animate-fade-in-up delay-300">
+            <div className="animate-fade-in-up delay-300 bg-card/20 p-8 rounded-3xl border border-consciousness-purple/20 group hover:bg-consciousness-purple/5 transition-all">
               <div className="text-6xl font-cosmic font-bold text-consciousness-purple mb-4">6</div>
-              <h3 className="text-2xl font-bold mb-4">Balanced D's</h3>
-              <p className="text-muted-foreground">Psychological, Spiritual, Physical, Environmental, Technological, Financial</p>
+              <h3 className="text-2xl font-bold mb-4">Midday: Balancing Power</h3>
+              <p className="text-muted-foreground mb-4">Affirm 6 times at midday. Engage emotionally through 6 minutes of focused visualization and purposeful action.</p>
+              <ul className="text-sm text-left space-y-2 text-muted-foreground/80">
+                <li>• Affirm intention 6x</li>
+                <li>• 6 minutes visualization</li>
+                <li>• 6 kind/purposeful actions</li>
+              </ul>
             </div>
-            <div className="animate-fade-in-up delay-500">
+            <div className="animate-fade-in-up delay-500 bg-card/20 p-8 rounded-3xl border border-infinity-gold/20 group hover:bg-infinity-gold/5 transition-all">
               <div className="text-6xl font-cosmic font-bold text-infinity-gold mb-4">9</div>
-              <h3 className="text-2xl font-bold mb-4">Repeated A's</h3>
-              <p className="text-muted-foreground">{actions.join(", ")}</p>
+              <h3 className="text-2xl font-bold mb-4">Evening: Manifestation</h3>
+              <p className="text-muted-foreground mb-4">Say or write 9 times before sleep. Complete the cycle by embedding your aims into the subconscious for breakthrough.</p>
+              <ul className="text-sm text-left space-y-2 text-muted-foreground/80">
+                <li>• Write/say affirmation 9x</li>
+                <li>• 9 minutes reflection/feeling</li>
+                <li>• Journal 9 gratitudes/steps</li>
+              </ul>
             </div>
           </div>
           <Badge className="text-lg px-8 py-3 gradient-cosmic">Universal Law of Consciousness Evolution</Badge>

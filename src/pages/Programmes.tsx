@@ -75,81 +75,99 @@ const Programmes = () => {
       name: "Psychological", 
       icon: <Brain />, 
       color: "text-blue-400",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=600&q=80",
       description: "Understanding mind, emotions, and cognitive patterns"
     },
     { 
       name: "Spiritual", 
       icon: <Heart />, 
       color: "text-purple-400",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?auto=format&fit=crop&w=600&q=80",
       description: "Inner peace, purpose, and connection to the divine"
     },
     { 
       name: "Physical", 
       icon: <Zap />, 
       color: "text-green-400",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
       description: "Health, fitness, and bodily wellness"
     },
     { 
       name: "Environmental", 
       icon: <Target />, 
       color: "text-emerald-400",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80",
       description: "Harmony with nature and sustainable living"
     },
     { 
       name: "Technological", 
       icon: <Award />, 
       color: "text-cyan-400",
-      image: "https://images.unsplash.com/photo-1550439062-57db66baf773?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80",
       description: "Digital literacy and technology balance"
     },
     { 
       name: "Financial", 
       icon: <Clock />, 
       color: "text-yellow-400",
-      image: "https://images.unsplash.com/photo-1579621970563-430f63602d4b?w=500&q=80",
+      image: "https://images.unsplash.com/photo-1620306143924-ac8af5ea7d6f?auto=format&fit=crop&w=600&q=80",
       description: "Wealth creation and financial stability"
     }
   ];
 
   const ageGroups = [
-    { letter: "C", title: "Children", age: "1-5 years", focus: "Emotional Safety & Early Awareness" },
-    { letter: "L", title: "Learners", age: "6-12 years", focus: "Focus & Joyful Learning" },
-    { letter: "Y", title: "Youth", age: "13-30 years", focus: "Skill, Purpose & Employment" },
-    { letter: "F", title: "Family", age: "30-50 years", focus: "Balance & Wellness" },
-    { letter: "O", title: "Olders", age: "50+ years", focus: "Dignity & Legacy" }
+    { letter: "C", title: "Children", age: "1-12 years", focus: "Little CLYFOs: Character & EQ" },
+    { letter: "L", title: "Leaders", age: "Aspirants", focus: "World of Jnani: Skill & Purpose" },
+    { letter: "Y", title: "Youth", age: "13-30 years", focus: "Leadership Gym: AI-Proof Careers" },
+    { letter: "F", title: "Family", age: "30-50 years", focus: "Family Reset: Stability & Balance" },
+    { letter: "O", title: "Olders", age: "50+ years", focus: "Wisdom Hubs: Mentorship & Legacy" }
   ];
 
   const courses = [
     {
-      title: "The 5D Pillar of Consciousness",
-      subtitle: "Clarity, Consciousness and Core Values to Living Better",
-      description: "Explore the foundational dimensions that shape conscious human development and personal transformation.",
-      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80",
-      modules: 6,
-      lessons: 45,
-      hours: "24+ hrs"
+      title: "Little CLYFOs",
+      subtitle: "Shaping Gen Alpha Leaders",
+      description: "Gamified rituals, play-therapy, and Vedic+Tech literacy for early consciousness shaping.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80",
+      modules: 5,
+      lessons: 30,
+      hours: "15+ hrs"
     },
     {
-      title: "Basic Three Insights",
-      subtitle: "Resilience & Inner Wisdom",
-      description: "Ancient wisdom meets modern psychology to build emotional resilience and mental clarity.",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
-      modules: 4,
-      lessons: 32,
+      title: "21-Day Leadership Gym",
+      subtitle: "AI-Proof Your Future",
+      description: "Intense leadership drills with VR, AI mentors, and micro-skilling for Gen Z entrepreneurs.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80",
+      modules: 7,
+      lessons: 42,
+      hours: "21+ hrs"
+    },
+    {
+      title: "CLYFO Family Reset",
+      subtitle: "Holistic Home Wellbeing",
+      description: "A unique blend of financial literacy and emotional stability modules for stronger families.",
+      image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80",
+      modules: 6,
+      lessons: 36,
       hours: "18+ hrs"
     },
     {
-      title: "Flying Like Birds in Infinity",
-      subtitle: "6 Wings of Consciousness",
-      description: "Master the holistic approach to personal and professional growth through the 6-dimensional framework.",
-      image: "https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&q=80",
+      title: "Elder Mentorship Hubs",
+      subtitle: "Monetizing Wisdom",
+      description: "Connecting senior wisdom reserves with youth leadership to build a national mentoring grid.",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&w=600&q=80",
+      modules: 4,
+      lessons: 24,
+      hours: "12+ hrs"
+    },
+    {
+      title: "Village Transformers",
+      subtitle: "Grassroots Revolution",
+      description: "Grooming mandal-level mentors to drive rural employability and conscious digital penetration.",
+      image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=80",
       modules: 8,
-      lessons: 56,
-      hours: "32+ hrs"
+      lessons: 50,
+      hours: "40+ hrs"
     }
   ];
 
@@ -159,21 +177,21 @@ const Programmes = () => {
       role: "Aspirant, Delhi",
       rating: 5,
       text: "This program has been transformative. I feel more centered and purposeful in my daily life.",
-      image: "https://i.pravatar.cc/150?img=1"
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Rohan Verma",
       role: "Transformer, Mumbai",
       rating: 5,
       text: "Excellent blend of ancient wisdom and modern science. Highly recommended for personal growth.",
-      image: "https://i.pravatar.cc/150?img=2"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
     },
     {
       name: "Priya Patel",
       role: "Aspirant, Bangalore",
       rating: 5,
       text: "The guided meditations and interactive tools made learning engaging and practical.",
-      image: "https://i.pravatar.cc/150?img=3"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
     }
   ];
 
@@ -181,17 +199,17 @@ const Programmes = () => {
     {
       title: "Morning Rituals Highlights Series",
       description: "Start your day with consciousness and clarity",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&q=80"
+      image: "https://images.unsplash.com/photo-1508215885820-4585e5610ec3?auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Serenity Seeking Daily Essentials",
       description: "Build habits for inner peace and wellbeing",
-      image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=300&q=80"
+      image: "https://images.unsplash.com/photo-1528319725582-ddc096101511?auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Holistic Living Inspirations & Rituals",
       description: "Transform your lifestyle with conscious practices",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80"
+      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -404,6 +422,58 @@ const Programmes = () => {
             <Badge className="text-lg px-8 py-3 gradient-cosmic">
               Holistic Human Development
             </Badge>
+          </div>
+        </div>
+      </section>
+
+      {/* Course Modules Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-4xl font-cosmic font-bold mb-4">
+              Advanced Course Modules
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Deep dive into specialized consciousness programs designed for rapid transformation and inner mastery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {courses.map((course, index) => (
+              <Card key={index} className="group hover:shadow-cosmic transition-all duration-500 animate-fade-in-up overflow-hidden border-primary/20" style={{ animationDelay: `${index * 200}ms` }}>
+                <div className="relative h-48 overflow-hidden bg-gray-800">
+                  <img 
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="gradient-infinity">{course.modules} Modules</Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{course.title}</h3>
+                  <p className="text-sm font-semibold text-primary/80 mb-3">{course.subtitle}</p>
+                  <p className="text-sm text-muted-foreground mb-6 line-clamp-2">{course.description}</p>
+                  
+                  <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-primary/10">
+                    <div className="flex items-center gap-1">
+                      <Book className="w-3 h-3" />
+                      {course.lessons} Lessons
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {course.hours}
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full mt-6 variant-outline group-hover:gradient-cosmic group-hover:text-background transition-all">
+                    Explore Syllabus
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

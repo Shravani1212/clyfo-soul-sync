@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -107,9 +107,11 @@ const TransformerDashboard = () => {
             <Button size="sm" variant="outline">
               <Bell className="w-4 h-4" />
             </Button>
-            <Button size="sm" variant="outline">
-              <Settings className="w-4 h-4" />
-            </Button>
+            <Link to="/profile">
+              <Button size="sm" variant="outline">
+                <Settings className="w-4 h-4" />
+              </Button>
+            </Link>
             <Button 
               size="sm" 
               variant="outline" 
@@ -122,6 +124,35 @@ const TransformerDashboard = () => {
         </div>
       </header>
 
+      {/* Dashboard Navigation */}
+      <nav className="bg-card/80 backdrop-blur-md border-b border-border/50 sticky top-[73px] z-30 hidden md:block">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex space-x-2 overflow-x-auto py-2 no-scrollbar">
+            <Link to="/transformer-dashboard">
+              <Button variant="secondary" size="sm" className="whitespace-nowrap">Dashboard</Button>
+            </Link>
+            <Link to="/programmes">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Courses</Button>
+            </Link>
+            <Link to="/challenges">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Challenges</Button>
+            </Link>
+            <Link to="/leaderboard">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Leaderboard</Button>
+            </Link>
+            <Link to="/tools">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Tools</Button>
+            </Link>
+            <Link to="/referral">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Refer & Earn</Button>
+            </Link>
+            <Link to="/support">
+              <Button variant="ghost" size="sm" className="whitespace-nowrap">Support</Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Welcome Card */}
         <Card className="mb-8 bg-gradient-to-r from-consciousness-purple/10 to-cosmic-saffron/10 border-primary/30">
@@ -131,8 +162,12 @@ const TransformerDashboard = () => {
               You're empowering others on their consciousness journey. Every student you guide earns you rewards and recognition!
             </p>
             <div className="flex gap-4">
-              <Button className="gradient-cosmic text-background">Find New Mentees</Button>
-              <Button variant="outline">View Training Plan</Button>
+              <Link to="/referral">
+                <Button className="gradient-cosmic text-background">Find New Mentees</Button>
+              </Link>
+              <Link to="/programmes">
+                <Button variant="outline">View Training Plan</Button>
+              </Link>
             </div>
           </CardContent>
         </Card>
@@ -184,7 +219,9 @@ const TransformerDashboard = () => {
                 <Users className="w-5 h-5" />
                 Active Mentees
               </h3>
-              <Button className="gradient-cosmic text-background">Connect with New Mentees</Button>
+              <Link to="/referral">
+                <Button className="gradient-cosmic text-background">Connect with New Mentees</Button>
+              </Link>
             </div>
 
             <div className="space-y-4">

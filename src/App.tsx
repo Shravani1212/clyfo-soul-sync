@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import DimensionTicker from "@/components/DimensionTicker";
 import JyaniBot from "@/components/JyaniBot";
 
 // Page imports
@@ -11,6 +13,11 @@ import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Programmes from "@/pages/Programmes";
 import Testimonials from "@/pages/Testimonials";
+import Team from "@/pages/Team";
+import Events from "@/pages/Events";
+import Certifications from "@/pages/Certifications";
+import Movement from "@/pages/Movement";
+import Community from "@/pages/Community";
 import Contact from "@/pages/Contact";
 import Login from "@/pages/Login";
 import AspirantDashboard from "@/pages/AspirantDashboard";
@@ -21,6 +28,8 @@ import Leaderboard from "@/pages/Leaderboard";
 import Tools from "@/pages/Tools";
 import Support from "@/pages/Support";
 import NotFound from "@/pages/NotFound";
+import JourneyDetail from "@/pages/JourneyDetail";
+import Profile from "@/pages/Profile";
 import AnimatedBackground from "@/components/AnimatedBackground";
 const queryClient = new QueryClient();
 
@@ -67,7 +76,13 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/programmes" element={<Programmes />} />
+              <Route path="/journey/:ageGroup" element={<JourneyDetail />} />
               <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/certifications" element={<Certifications />} />
+              <Route path="/movement" element={<Movement />} />
+              <Route path="/community" element={<Community />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
 
@@ -122,11 +137,23 @@ const App = () => (
                   <ProtectedRoute element={<Support />} />
                 } 
               />
+              <Route 
+                path="/profile" 
+                element={
+                  <ProtectedRoute element={<Profile />} />
+                } 
+              />
 
               {/* Fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          
+          {/* Global Footer */}
+          <Footer />
+
+          {/* Fixed Dimension Ticker (Bottom) */}
+          <DimensionTicker />
           
           {/* AI Chatbot - Global Component */}
           <JyaniBot />

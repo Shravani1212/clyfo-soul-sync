@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, BookOpen, Award, TrendingUp, HeadphonesIcon, Smartphone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProgramsWings = () => {
   return (
@@ -69,10 +70,12 @@ const ProgramsWings = () => {
                   </ul>
                 </div>
 
-                <Button className="w-full bg-cosmic-green hover:bg-cosmic-green/80 text-black font-semibold">
-                  Become a Transformer
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link to="/programmes" className="block mt-4">
+                  <Button className="w-full bg-cosmic-green hover:bg-cosmic-green/80 text-black font-semibold">
+                    Become a Transformer
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -123,10 +126,12 @@ const ProgramsWings = () => {
                   </ul>
                 </div>
 
-                <Button className="w-full bg-cosmic-saffron hover:bg-cosmic-saffron/80 text-black font-semibold">
-                  Join as Aspirant
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link to="/programmes" className="block mt-4">
+                  <Button className="w-full bg-cosmic-saffron hover:bg-cosmic-saffron/80 text-black font-semibold">
+                    Join as Aspirant
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -137,12 +142,16 @@ const ProgramsWings = () => {
           <div className="inline-block bg-card/50 backdrop-blur-sm rounded-2xl px-8 py-6 border border-primary/20">
             <h3 className="font-cosmic text-2xl font-bold mb-4">Choose Your Wing</h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg" className="border-cosmic-saffron text-cosmic-saffron hover:bg-cosmic-saffron/10">
-                I Am an Aspirant
-              </Button>
-              <Button variant="outline" size="lg" className="border-cosmic-green text-cosmic-green hover:bg-cosmic-green/10">
-                I Am a Transformer
-              </Button>
+              <Link to="/programmes">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto border-cosmic-saffron text-cosmic-saffron hover:bg-cosmic-saffron/10">
+                  I Am an Aspirant
+                </Button>
+              </Link>
+              <Link to="/programmes">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto border-cosmic-green text-cosmic-green hover:bg-cosmic-green/10">
+                  I Am a Transformer
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

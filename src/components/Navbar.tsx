@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { LogOut, Menu, X, Home, Gift, Zap, BarChart3, Settings, Wrench } from "lucide-react";
-import clyfoLogo from "@/assets/clyfo-logo.jpg";
+import ClyfoLogo from "@/components/ClyfoLogo";
 
 interface User {
   id: string;
@@ -54,7 +54,12 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Programmes", path: "/programmes" },
+    { name: "Community", path: "/community" },
+    { name: "Team", path: "/team" },
+    { name: "Events", path: "/events" },
+    { name: "Certifications", path: "/certifications" },
     { name: "Testimonials", path: "/testimonials" },
+    { name: "Movement", path: "/movement" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -72,11 +77,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <img src={clyfoLogo} alt="CLYFO" className="h-10 w-auto rounded" />
-          <span className="text-lg font-cosmic font-bold gradient-cosmic bg-clip-text text-transparent">
-            CLYFO<sup className="text-xs">369</sup>
-          </span>
+        <Link to="/" className="flex items-center gap-2 cursor-pointer group shrink-0">
+          <ClyfoLogo className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" />
         </Link>
 
         {/* Desktop Menu */}

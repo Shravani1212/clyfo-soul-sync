@@ -11,7 +11,7 @@ interface Message {
 }
 
 const JyaniBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -153,7 +153,7 @@ const JyaniBot = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-cosmic animate-cosmic-glow bg-gradient-to-r from-cosmic-saffron to-infinity-gold hover:scale-110 transition-transform"
+          className="fixed bottom-20 right-6 z-[110] w-16 h-16 rounded-full shadow-cosmic animate-cosmic-glow bg-gradient-to-r from-cosmic-saffron to-infinity-gold hover:scale-110 transition-transform"
         >
           <MessageCircle className="w-6 h-6" />
         </Button>
@@ -161,7 +161,7 @@ const JyaniBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px] bg-card border-2 border-primary/30 rounded-2xl shadow-2xl flex flex-col animate-fade-in-up">
+        <div className="fixed bottom-20 right-6 z-[110] w-96 h-[600px] bg-card border-2 border-primary/30 rounded-2xl shadow-2xl flex flex-col animate-fade-in-up">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-cosmic-saffron/10 to-consciousness-purple/10 rounded-t-2xl">
             <div className="flex items-center gap-3">

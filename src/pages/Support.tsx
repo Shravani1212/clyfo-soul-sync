@@ -18,7 +18,9 @@ import {
   Save,
   X,
   Flag,
-  Sparkles // Added Sparkles for extra animation
+  Sparkles,
+  BookOpen,
+  Leaf
 } from "lucide-react";
 import { toast } from "sonner";
 import DashboardLayout from "@/components/DashboardLayout";
@@ -34,7 +36,7 @@ interface BankDetails {
 const Support = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<any>(null);
-  const [theme, setTheme] = useState<"light" | "dark" | "auto" | "tricolor">("dark");
+  const [theme, setTheme] = useState<"light" | "dark" | "auto" | "tricolor" | "purple" | "academia" | "sage">("dark");
   const [editingBank, setEditingBank] = useState(false);
   const [bankDetails, setBankDetails] = useState<BankDetails>({
     accountHolder: "Kasthuri Shravani",
@@ -68,17 +70,23 @@ const Support = () => {
       setUser(JSON.parse(storedUser));
       
       // Load saved theme
-      const savedTheme = localStorage.getItem("theme") as "light" | "dark" | "auto" | "tricolor" || "dark";
+      const savedTheme = localStorage.getItem("theme") as "light" | "dark" | "auto" | "tricolor" | "purple" | "academia" | "sage" || "dark";
       setTheme(savedTheme);
       
       // Apply class on load
       const root = document.documentElement;
-      root.classList.remove("dark", "tricolor");
+      root.classList.remove("dark", "tricolor", "purple", "academia", "sage");
       
       if (savedTheme === "dark") {
         root.classList.add("dark");
       } else if (savedTheme === "tricolor") {
         root.classList.add("tricolor");
+      } else if (savedTheme === "purple") {
+        root.classList.add("purple");
+      } else if (savedTheme === "academia") {
+        root.classList.add("academia");
+      } else if (savedTheme === "sage") {
+        root.classList.add("sage");
       } else if (savedTheme === "auto") {
         const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         if (systemTheme === "dark") root.classList.add("dark");
@@ -88,17 +96,23 @@ const Support = () => {
     }
   }, [navigate]);
 
-  const handleThemeChange = (newTheme: "light" | "dark" | "auto" | "tricolor") => {
+  const handleThemeChange = (newTheme: "light" | "dark" | "auto" | "tricolor" | "purple" | "academia" | "sage") => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     
     const root = document.documentElement;
-    root.classList.remove("dark", "tricolor");
+    root.classList.remove("dark", "tricolor", "purple", "academia", "sage");
     
     if (newTheme === "dark") {
       root.classList.add("dark");
     } else if (newTheme === "tricolor") {
       root.classList.add("tricolor");
+    } else if (newTheme === "purple") {
+      root.classList.add("purple");
+    } else if (newTheme === "academia") {
+      root.classList.add("academia");
+    } else if (newTheme === "sage") {
+      root.classList.add("sage");
     } else if (newTheme === "auto") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       if (systemTheme === "dark") root.classList.add("dark");
@@ -291,6 +305,63 @@ const Support = () => {
                       </p>
                       {theme === "tricolor" && (
                         <Badge className="bg-gradient-to-r from-orange-500 via-white to-green-600 text-black border border-slate-200 shadow-md animate-pulse">Active</Badge>
+                      )}
+                    </div>
+
+                    {/* Purple Theme */}
+                    <div
+                      onClick={() => handleThemeChange("purple")}
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
+                        theme === "purple"
+                          ? "border-purple-500 bg-purple-500/10 shadow-lg ring-2 ring-offset-2 ring-purple-500/50"
+                          : "border-border hover:border-purple-500/50 hover:shadow-md"
+                      }`}
+                    >
+                      <Palette className="w-8 h-8 mb-3 text-purple-600 group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold mb-2 text-purple-900 dark:text-purple-100">Royal Purple</h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Deep consciousness gradients
+                      </p>
+                      {theme === "purple" && (
+                        <Badge className="bg-purple-600 text-white">Active</Badge>
+                      )}
+                    </div>
+
+                    {/* Academia Theme */}
+                    <div
+                      onClick={() => handleThemeChange("academia")}
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
+                        theme === "academia"
+                          ? "border-blue-500 bg-blue-50 shadow-lg ring-2 ring-offset-2 ring-blue-200"
+                          : "border-border hover:border-blue-400 hover:shadow-md bg-sky-50"
+                      }`}
+                    >
+                      <BookOpen className="w-8 h-8 mb-3 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-semibold mb-2 text-blue-900">Academic Blue</h3>
+                      <p className="text-sm text-blue-600/70 mb-4">
+                        Clean, focused & professional
+                      </p>
+                      {theme === "academia" && (
+                        <Badge className="bg-blue-500 text-white">Active</Badge>
+                      )}
+                    </div>
+
+                    {/* Sage Theme */}
+                    <div
+                      onClick={() => handleThemeChange("sage")}
+                      className={`group p-6 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105 ${
+                        theme === "sage"
+                          ? "border-emerald-500 bg-emerald-50 shadow-lg ring-2 ring-offset-2 ring-emerald-200"
+                          : "border-border hover:border-emerald-400 hover:shadow-md bg-green-50"
+                      }`}
+                    >
+                      <Leaf className="w-8 h-8 mb-3 text-emerald-600 group-hover:-rotate-12 transition-transform duration-300" />
+                      <h3 className="font-semibold mb-2 text-emerald-900">Study Sage</h3>
+                      <p className="text-sm text-emerald-600/70 mb-4">
+                        Calming, growth & reading
+                      </p>
+                      {theme === "sage" && (
+                        <Badge className="bg-emerald-500 text-white">Active</Badge>
                       )}
                     </div>
 

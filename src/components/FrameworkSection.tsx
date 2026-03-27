@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Circle, RefreshCw } from "lucide-react";
+import { Circle, RefreshCw, Sparkles, Brain, Activity, Leaf, Laptop, Coins, Lightbulb, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import CommunityMap from "@/components/CommunityMap";
 
 const FrameworkSection = () => {
   const [activeTab, setActiveTab] = useState<"scientific" | "feedback">("scientific");
@@ -12,9 +14,9 @@ const FrameworkSection = () => {
   };
 
   const coreCs = [
-    { title: "Conceptual Creation", desc: "Birth of ideas and vision" },
-    { title: "Conscious Preservation", desc: "Mindful maintenance and growth" },
-    { title: "Critical Destruction", desc: "Breaking patterns that don't serve" }
+    { title: "Clarity", desc: "Conceptual creation and vision" },
+    { title: "Consciousness", desc: "Mindful preservation and growth" },
+    { title: "Core Values", desc: "The foundation of all actions" }
   ];
 
   const actions = [
@@ -27,22 +29,22 @@ const FrameworkSection = () => {
     {
       title: "Education",
       subtitle: "Empowering minds through accessible learning.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBFH9hmQEk_gyD8zQ4FBXiUDtfffm08cA_lvWfp120iWZhSajxLYmSuK_RwQOt4jhPfgrkkjKd4gd8D6lYoI6omSd9l-eNMihlrtK_ivdQxwl52MP_B9JgVobdY25YR8E0Cp8qbEGJ3ncCalUyVjktyJM7cYsDsbqcbTg58n3LhmyU4C0Id6BqbP0aofAlbEbxQYq6WYqnd2y2uK1svVWXqVqSpBoXkw2uadfkFYu01uQsKyvIjcm1nQq5QIdcNG5GtNPCSKyqJQyA"
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Wellness",
       subtitle: "Nurturing holistic well-being for all.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAG18Qy71LsrBxZschhy2MP4TITXJCtgA8GYHf5pgcw-JyKuVQGa5gVEUJv7f4l4gLGjrxnoGZz-ScR4gqo3fmoSfAQ9v2HAeI8cksBCg8EM8FCiYa1CLhdxRDpduDK8vRM9529dYRkHdgvszdFJEuKSkJ2UE10tm05QdaopbYjnVv6873M_V7jlSIGT68FZychw7cpb7PcehDgyGC8QsDdh3ojcmLe6mi590sYGap1_qAZWi04rXX04fFLqKG2kHhM_E8wtF7RH5Q"
+      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Sustainability",
       subtitle: "Creating a greener, healthier future.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAcUyZXjju6VcoaBIQSmmrNTcTh3B5fJwiKU3NIS933EcN1IBv96wvXUcXE668XSK6QjTaJn6rBUhagP-D-1DBtfYUq4lOj1z5i2Ed2GjqeokGpzrcunBgP_DjiirklsSnzsgslaq7AK4hUO0x7X1WAp7jLi7I7N8_5kmOMh-UuFRTFCshQsO7403kHODUMls-snU4DwOxQUKg9CIMdM80V0M1oimMWww93_9Wz_ZsmqDO9QyQ6V-ca19gE4AO9okQmrqO5CvnY-yE"
+      image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Innovation",
       subtitle: "Driving progress with cutting-edge solutions.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc5eTFTld2h-P3DqXHRm1vo2UTcoiRCac89j2KCdYYlz0_4UQabOyGBM1AOhps4XzLqMdoFV-IwrrvQ-bJXqD5Jh4mvyr5FiNOXIbNGeDHmpfBRhRNRAVMAuTW5sUMP1RwaWuAp6JMd7c8yNAtsaL88PpSjkjeEkAuPbdAOp9fyaY2st9mk1Iobsbv0eiUrARWaNGLEjL_sUw3Z455JADt4gGmhp8XX9EgkNto_FL9y7xapgVdG440AdgSri09SjHEDKMEqvKduwg"
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -52,21 +54,21 @@ const FrameworkSection = () => {
       text:
         "Research indicates that regular meditation practice can lead to measurable changes in brain structure, including increased gray matter density in regions associated with self-awareness, compassion and introspection. Meditation enhances neuroplasticity and boosts focus and attention.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBf_brain_placeholder",
+        "https://images.unsplash.com/photo-1545389336-cf09bd8c9b58?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Reduces Stress and Improves Resilience",
       text:
         "Meditation down-regulates amygdala activity, improving emotional resilience and enabling better coping with stressors while maintaining calm.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBf_globe_placeholder",
+        "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "AI‑Powered Validation of Meditative States",
       text:
         "Advances in brain imaging and AI provide objective evidence of distinct brain activity patterns during deep meditative states, validating transformative effects of meditation.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBf_brain2_placeholder",
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -79,15 +81,15 @@ const FrameworkSection = () => {
 
   const quotes = [
     {
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc_ocean_placeholder",
+      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=80",
       quote: '“You have the right to work, but never to the fruit of work.” — Resilience in a distracted world',
     },
     {
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc_cliff_placeholder",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
       quote: '“The mind is restless, turbulent... but can be controlled by practice and detachment.” — Mindfulness in digital overwhelm',
     },
     {
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc_river_placeholder",
+      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
       quote: '“Let a man lift himself by himself... the mind is both friend and enemy.” — Inner mastery in AI-driven chaos',
     },
   ];
@@ -125,23 +127,16 @@ const FrameworkSection = () => {
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-background via-secondary/10 to-background overflow-hidden">
-      {/* Hero image + title for 'The Infinity Fountain' */}
+      {/* Community Map - replaces Infinity Fountain card */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="rounded-2xl overflow-hidden bg-black/40">
-          <div
-            className="w-full h-64 sm:h-72 md:h-96 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                'linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxN99j6Dg0QKCIFUTrmcpxVaFHNA7rdEz6EEsTt659_ZeZUcDxDMucBUyBJSMLaWOErBiVtv7BwcvU9Wyw5FP67938cxyacODMyOcwC3H21eqDqdAl992yo88VtEEuTQExbU5naEZyXfdoNWdoYZGPqQHVdG9oJqybWOP_lnFIqQ9vhGjsmpkxo4iaB8RKszM9-AlHgSBuSMWik_LCDTc9C02CSpRgfe_Qhfukk3kApcDpBKZA1Hnjip61hHG6eMlMt9CMRCwZN5E")'
-            }}
-          />
-          <div className="p-8 md:p-12 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">The Infinity Fountain</h3>
-            <p className="text-md md:text-lg text-muted-foreground max-w-3xl mx-auto">
-              Every drop counts. Your contribution, big or small, fuels our collective journey towards a conscious society.
-              Witness how individual energies converge to create impact across education, wellness, sustainability and innovation.
+        <div className="rounded-2xl overflow-hidden bg-card/40 backdrop-blur-sm border border-border/50 p-6 md:p-10">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold font-outfit gradient-text mb-3">🌍 CLYFO Across Bharat</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Every drop counts. Click any city dot to see the community, animated reactions, and real impact numbers.
             </p>
           </div>
+          <CommunityMap />
         </div>
       </div>
 
@@ -204,44 +199,83 @@ const FrameworkSection = () => {
           ))}
         </div>
 
-        {/* Detailed Breakdown (kept but moved below about cards) */}
+        {/* Extensive Breakdown with Images and Animations */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* 3C Detail */}
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-cosmic-saffron/20 hover:border-cosmic-saffron/50 transition-all animate-fade-in-up">
-            <h3 className="text-2xl font-bold text-cosmic-saffron mb-4">3 Core C's</h3>
-            <div className="space-y-4">
-              {coreCs.map((c, i) => (
-                <div key={i}>
-                  <div className="font-semibold mb-1">{c.title}</div>
-                  <div className="text-sm text-muted-foreground">{c.desc}</div>
-                </div>
-              ))}
+          <div className="relative overflow-hidden rounded-3xl group h-[480px] shadow-cosmic animate-fade-in-up">
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop")' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+            <div className="relative z-10 h-full p-8 flex flex-col justify-end border border-cosmic-saffron/20 rounded-3xl">
+              <h3 className="text-3xl font-cosmic font-bold text-cosmic-saffron mb-6 drop-shadow-md">3 Core C's</h3>
+              <div className="space-y-4">
+                {[
+                  { title: "Clarity", desc: "Conceptual creation and vision", icon: Lightbulb },
+                  { title: "Consciousness", desc: "Mindful maintenance and growth", icon: Shield },
+                  { title: "Core Values", desc: "The foundation of all actions", icon: Zap }
+                ].map((c, i) => (
+                  <div key={i} className="flex items-start gap-4 p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/5 hover:bg-cosmic-saffron/20 transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="bg-cosmic-saffron/20 p-2 rounded-full border border-cosmic-saffron/30 shadow-[0_0_10px_rgba(255,153,51,0.3)]">
+                      <c.icon className="w-4 h-4 text-cosmic-saffron" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white text-sm">{c.title}</div>
+                      <div className="text-xs text-white/70 mt-0.5">{c.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* 6D Detail */}
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-consciousness-purple/20 hover:border-consciousness-purple/50 transition-all animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <h3 className="text-2xl font-bold text-consciousness-purple mb-4">6 Dimensions</h3>
-            <div className="space-y-2 text-sm">
-              <div>• Psychological Wellness</div>
-              <div>• Spiritual Alignment</div>
-              <div>• Physical Health</div>
-              <div>• Environmental Harmony</div>
-              <div>• Technological Balance</div>
-              <div>• Financial Stability</div>
+          <div className="relative overflow-hidden rounded-3xl group h-[480px] shadow-consciousness animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop")' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+            <div className="relative z-10 h-full p-8 flex flex-col justify-end border border-consciousness-purple/20 rounded-3xl">
+              <h3 className="text-3xl font-cosmic font-bold text-consciousness-purple mb-6 drop-shadow-md">6 Dimensions</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { name: "Psychological", icon: Brain },
+                  { name: "Spiritual", icon: Sparkles },
+                  { name: "Physical", icon: Activity },
+                  { name: "Environmental", icon: Leaf },
+                  { name: "Technological", icon: Laptop },
+                  { name: "Financial", icon: Coins }
+                ].map((dim, i) => (
+                  <div key={i} className="flex flex-col items-center justify-center p-3 rounded-xl bg-black/40 backdrop-blur-sm border border-white/5 hover:bg-consciousness-purple/20 transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <dim.icon className="w-5 h-5 text-consciousness-purple mb-1.5 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)] animate-pulse" style={{ animationDuration: `${2 + i * 0.5}s` }} />
+                    <span className="text-[10px] font-bold text-white tracking-wider uppercase">{dim.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* 9A Detail */}
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-cosmic-green/20 hover:border-cosmic-green/50 transition-all animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <h3 className="text-2xl font-bold text-cosmic-green mb-4">9 Actions</h3>
-            <div className="space-y-2 text-sm">
-              {actions.map((action, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <Circle className="w-2 h-2 fill-cosmic-green text-cosmic-green" />
-                  <span>{action}</span>
-                </div>
-              ))}
+          <div className="relative overflow-hidden rounded-3xl group h-[480px] shadow-cosmic animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?auto=format&fit=crop&w=800&q=80")' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+            <div className="relative z-10 h-full p-8 flex flex-col justify-end border border-cosmic-green/20 rounded-3xl">
+              <h3 className="text-3xl font-cosmic font-bold text-cosmic-green mb-6 drop-shadow-md">9 Actions</h3>
+              <div className="flex flex-wrap gap-2">
+                {actions.map((action, i) => (
+                  <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-cosmic-green/30 hover:bg-cosmic-green/30 transition-all duration-300 transform hover:scale-105 shadow-[0_0_10px_rgba(19,136,8,0.1)]">
+                    <div className="w-4 h-4 rounded-full bg-cosmic-green/20 flex items-center justify-center">
+                      <span className="text-[9px] font-bold text-cosmic-green">{i + 1}</span>
+                    </div>
+                    <span className="text-xs font-bold text-white tracking-wide">{action}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -252,9 +286,11 @@ const FrameworkSection = () => {
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
               This isn't just a framework — it's a <span className="text-primary font-semibold">living system</span> that transforms problems into purposeful skills through infinite conscious loops.
             </p>
-            <Button size="lg" className="gradient-cosmic text-background font-semibold">
-              Experience the Framework
-            </Button>
+            <Link to="/about">
+              <Button size="lg" className="gradient-cosmic text-background font-semibold">
+                Experience the Framework
+              </Button>
+            </Link>
           </div>
         </div>
 
